@@ -1,4 +1,4 @@
-#!/home/zhangzhi/RobotFramework/RFenv/bin/python
+#!/home/zhangzhi/RobotFramework/cloudBrainTest/RFenv/bin/python
 
 import sys
 import getopt

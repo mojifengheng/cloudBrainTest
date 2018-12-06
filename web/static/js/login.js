@@ -21,7 +21,9 @@ function checkForm()
   //调用执行后调用的函数
     complete: function(XMLHttpRequest, textStatus){
       text = XMLHttpRequest.responseText;
-      alert(text)
+      if (text == "True"){
+        window.location = "homepage";
+      }
     },
   //调用出错执行的函数
     error: function(){
