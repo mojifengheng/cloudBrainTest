@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>外骨骼云脑平台自动化测试框架</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../static/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../static/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../static/vendors/css/vendor.bundle.addons.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../static/images/favicon.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="testsuit">
+          <img src="../static/images/logo.svg" alt="logo" />
+        </a>
+        <a class="navbar-brand brand-logo-mini" href="testsuit">
+          <img src="../static/images/logo-mini.svg" alt="logo" />
+        </a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+          <li class="nav-item">
+            <a href="project" class="nav-link">
+              <i class="mdi mdi-bookmark-plus-outline"></i>项目信息</a>
+          </li>
+          <li class="nav-item active">
+            <a href="testsuit" class="nav-link">
+              <i class="mdi mdi-elevation-rise"></i>测试用例集</a>
+          </li>
+          <li class="nav-item">
+            <a href="testcase" class="nav-link">
+              <i class="mdi mdi-elevation-rise"></i>测试用例</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="mdi mdi-bookmark-plus-outline"></i>测试报告</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown d-none d-xl-inline-block">
+            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <span class="profile-text">你好，张志</span>
+              <img class="img-xs rounded-circle" src="../static/images/faces/face1.jpg" alt="Profile image">
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <div class="nav-link">
+              <div class="user-wrapper">
+                <div class="profile-image">
+                  <img src="../static/images/faces/face1.jpg" alt="profile image">
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">张志</p>
+                  <div>
+                    <small class="designation text-muted">测试工程师</small>
+                    <span class="status-indicator online"></span>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-success btn-block" onclick="window.location.href='project'">创建新测试项目
+                <i class="mdi mdi-plus"></i>
+              </button>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="testsuit">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">康复信息软件测试</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="testsuit">
+              <i class="menu-icon mdi mdi-robot"></i>
+              <span class="menu-title">外骨骼接口测试</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="testsuit">
+              <i class="menu-icon mdi mdi-database"></i>
+              <span class="menu-title">数据库测试</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 d-flex align-items-stretch grid-margin">
+              <div class="row flex-grow">
+                <div class="col-lg-12 grid-margin">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title text-danger">用例集列表</h4>
+                      <div class="table-responsive">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th>
+                                用例集名称
+                              </th>
+                              <th>
+                                用例集描述
+                              </th>
+                              <th>
+                                创建时间
+                              </th>
+                              <th>
+                                相关操作
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="font-weight-medium">
+                                软件登陆注册
+                              </td>
+                              <td>
+                                测试康复软件的登陆注册功能
+                              </td>
+                              <td>
+                                2019.1.20
+                              </td>
+                              <td>
+                                <div class="ticket-actions col-md-2">
+                                  <div class="btn-group dropdown">
+                                    <button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      操作
+                                    </button>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="#">
+                                        <i class="fa fa-reply fa-fw "></i>添加测试用例</a>
+                                      <a class="dropdown-item" href="#">
+                                        <i class="fa fa-history fa-fw"></i>执行测试用例集</a>
+                                      <div class="dropdown-divider"></div>
+                                      <a class="dropdown-item" href="#">
+                                        <i class="fa fa-check text-success fa-fw"></i>修改测试用例集</a>
+                                      <a class="dropdown-item" href="#">
+                                        <i class="fa fa-times text-danger fa-fw"></i>删除测试用例集</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="card-title text-danger">创建用例集</h1>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="exampleInputName1">用例集名称</label>
+                      <input type="text" class="form-control" id="suitName" placeholder="测试用例集名称">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">用例集描述</label>
+                      <input type="email" class="form-control" id="suitDiscribe" placeholder="测试用例集描述">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">测试库选择</label>
+                      <input type="password" class="form-control" id="suitLibrary" placeholder="测试库选择">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputCity1">setup设置</label>
+                      <input type="text" class="form-control" id="suitSetup" placeholder="setup设置">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputCity2">teardown设置</label>
+                      <input type="text" class="form-control" id="suitTeardown" placeholder="teardown设置">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputCity2">创建时间</label>
+                      <input type="text" class="form-control" id="suitCreatTime" placeholder="创建时间">
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">确定</button>
+                    <button class="btn btn-light">取消</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="../static/vendors/js/vendor.bundle.base.js"></script>
+  <script src="../static/vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="../static/js/off-canvas.js"></script>
+  <script src="../static/js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="../static/js/dashboard.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>

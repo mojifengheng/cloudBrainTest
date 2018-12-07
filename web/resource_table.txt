@@ -1,3 +1,13 @@
 (1) 登陆界面的图片：在static/images/auth/login_1.jpg
 (2) 浏览器角标图片：在static/images/favicon.png
 (3) 登陆界面的字体管理：在static/vendors/iconfonts/mdi/
+(4) 相片在： /static/images/faces/
+(5) 左边dashboard：在原文件中的index.html
+(6) 左边 Basic Ui element下的 Buttons：在原文件中的pages/ui-features/buttons.html
+(7) 左边 Basic Ui element下的 Typhgraphy：在原文件中的pages/ui-features/typography.html
+(8) 左边 Form element：在原文件中的pages/forms/basic_elements.html
+(9) 左边 Charts:在原文件pages/charts/chartjs.html
+(10) 左边 Tables:在原文件的pages/tables/basic-table.html
+(11) 左边 Icons :在原文件的pages/icons/font-awesome.html
+(12) 左边User page中的资源，在原文件的pages/samples下的各个文件。
+(13) 颜色标签可以使用 text-info（紫色）；text-warning(黄色)；text-danger(红色)；text-succeed（绿色）

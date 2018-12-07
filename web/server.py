@@ -9,9 +9,19 @@ def login():
     return render_template("index.html")
 
 
-@app.route('/homepage', methods=["POST", "GET"])
-def homepage():
-    return render_template("homepage.html")
+@app.route('/testsuit', methods=["POST", "GET"])
+def testsuit():
+    return render_template("testsuit.html")
+
+
+@app.route('/testcase', methods=["POST", "GET"])
+def testcase():
+    return render_template("testcase.html")
+
+
+@app.route('/project', methods=["POST", "GET"])
+def project():
+    return render_template("project.html")
 
 
 @app.route('/checkForm', methods=["POST", "GET"])
