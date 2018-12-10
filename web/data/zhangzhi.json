@@ -1,0 +1,16 @@
+{
+  "userName":"zhangzhi",
+  "password":"123456",
+  "project":
+  [
+    {
+      "projectName":"康复信息软件测试"
+    },
+    {
+      "projectName":"外骨骼接口测试"
+    },
+    {
+      "projectName":"数据库测试"
+    }
+  ]
+}

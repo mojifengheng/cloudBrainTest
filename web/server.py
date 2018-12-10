@@ -37,6 +37,15 @@ def checkForm():
     return cheak_flag
 
 
+@app.route("/getData", methods=["POST", "GET"])
+def getData():
+    userName = request.form.get("userName")
+    fileName = "data/" + userName + ".json"
+    with open(fileName, "r") as f:
+        data = json.loads(f.read())
+    return json.dumps(data)
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',
             port='1817',
