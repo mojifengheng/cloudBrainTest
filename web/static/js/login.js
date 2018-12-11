@@ -22,7 +22,7 @@ function checkForm()
     complete: function(XMLHttpRequest, textStatus){
       text = XMLHttpRequest.responseText;
       if (text == "True"){
-        window.location = "testsuit";
+        window.location = "testsuit?userName=" + username;
       }
     },
   //调用出错执行的函数

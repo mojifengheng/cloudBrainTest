@@ -17,7 +17,9 @@
   <link rel="stylesheet" href="../static/css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../static/images/favicon.png" />
-  <script>var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};</script>
+  <script>
+    var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
+  </script>
   <script src="../static/js/jquery-3.3.1.min.js"></script>
   <script src="../static/js/testsuit.js"></script>
 </head>
@@ -142,7 +144,8 @@
                               </th>
                             </tr>
                           </thead>
-                          <tbody>
+                          <tbody id="tbody-suit">
+                            <!--
                             <tr>
                               <td class="font-weight-medium">
                                 软件登陆注册
@@ -174,7 +177,7 @@
                                 </div>
                               </td>
                             </tr>
-                            <tr>
+                          -->
                           </tbody>
                         </table>
                       </div>

@@ -4,13 +4,68 @@
   "project":
   [
     {
-      "projectName":"康复信息软件测试"
+      "projectName":"康复信息软件测试",
+      "suit":
+      [
+          {
+            "suitName":"软件注册登陆",
+            "suitDiscribe":"测试康复软件的注册登陆功能",
+            "suitLibrary":"autoItRun",
+            "suitSetup":"打开软件",
+            "suitTeardown":"关闭软件",
+            "suitCreatTime":"2019.1.20"
+          },
+
+          {
+            "suitName":"患者搜索",
+            "suitDiscribe":"搜索患者姓名或者床号，获得患者信息",
+            "suitLibrary":"autoItRun",
+            "suitSetup":"登陆",
+            "suitTeardown":"关闭软件",
+            "suitCreatTime":"2019.1.25"
+          },
+
+          {
+            "suitName":"患者治疗",
+            "suitDiscribe":"提交患者治疗信息",
+            "suitLibrary":"autoItRun",
+            "suitSetup":"登陆，确定患者",
+            "suitTeardown":"关闭软件",
+            "suitCreatTime":"2019.1.28"
+          }
+      ]
     },
+
+
     {
-      "projectName":"外骨骼接口测试"
+      "projectName":"外骨骼接口测试",
+      "suit":
+      [
+        {
+          "suitName":"http接口测试",
+          "suitDiscribe":"测试云脑平台与外骨骼的http协议",
+          "suitLibrary":"httpLibrary",
+          "suitSetup":"",
+          "suitTeardown":"",
+          "suitCreatTime":"2019.2.1"
+        },
+
+        {
+          "suitName":"mqtt接口测试",
+          "suitDiscribe":"测试云脑平台与外骨骼的mqtt协议",
+          "suitLibrary":"mqttLibrary",
+          "suitSetup":"",
+          "suitTeardown":"",
+          "suitCreatTime":"2019.2.10"
+        }
+      ]
     },
+
+
     {
-      "projectName":"数据库测试"
+      "projectName":"数据库测试",
+      "suit":
+      []
     }
   ]
 }
