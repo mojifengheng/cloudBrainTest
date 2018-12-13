@@ -18,6 +18,8 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="../static/images/favicon.png" />
   <script>var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};</script>
+  <script src="../static/js/jquery-3.3.1.min.js"></script>
+  <script src="../static/js/project.js"></script>
 </head>
 
 <body>
@@ -25,25 +27,25 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="testsuit">
+        <a class="navbar-brand brand-logo" href="#">
           <img src="../static/images/logo.svg" alt="logo" />
         </a>
-        <a class="navbar-brand brand-logo-mini" href="testsuit">
+        <a class="navbar-brand brand-logo-mini" href="#">
           <img src="../static/images/logo-mini.svg" alt="logo" />
         </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
           <li class="nav-item">
-            <a href="project" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="mdi mdi-bookmark-plus-outline"></i>项目信息</a>
           </li>
           <li class="nav-item active">
-            <a href="testsuit" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="mdi mdi-elevation-rise"></i>测试用例集</a>
           </li>
           <li class="nav-item">
-            <a href="testcase" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="mdi mdi-elevation-rise"></i>测试用例</a>
           </li>
           <li class="nav-item">
@@ -68,7 +70,7 @@
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
+        <ul class="nav" id="ul-project">
           <li class="nav-item nav-profile">
             <div class="nav-link">
               <div class="user-wrapper">
@@ -83,28 +85,10 @@
                   </div>
                 </div>
               </div>
-              <button class="btn btn-success btn-block" onclick="window.location.href='project'">创建新测试项目
+              <button class="btn btn-success btn-block" onclick="clickNewProject();">创建新测试项目
                 <i class="mdi mdi-plus"></i>
               </button>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="testsuit">
-              <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">康复信息软件测试</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="testsuit">
-              <i class="menu-icon mdi mdi-robot"></i>
-              <span class="menu-title">外骨骼接口测试</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="testsuit">
-              <i class="menu-icon mdi mdi-database"></i>
-              <span class="menu-title">数据库测试</span>
-            </a>
           </li>
         </ul>
       </nav>
@@ -136,39 +120,7 @@
                               </th>
                             </tr>
                           </thead>
-                          <tbody>
-                            <tr>
-                              <td class="font-weight-medium">
-                                康复信息软件测试
-                              </td>
-                              <td>
-                                云脑平台bris信息软件的功能测试
-                              </td>
-                              <td>
-                                2019.1.20
-                              </td>
-                              <td>
-                                <div class="ticket-actions col-md-2">
-                                  <div class="btn-group dropdown">
-                                    <button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      操作
-                                    </button>
-                                    <div class="dropdown-menu">
-                                      <a class="dropdown-item" href="#">
-                                        <i class="fa fa-reply fa-fw "></i>添加测试用例集</a>
-                                      <a class="dropdown-item" href="#">
-                                        <i class="fa fa-history fa-fw"></i>查看测试用例集</a>
-                                      <div class="dropdown-divider"></div>
-                                      <a class="dropdown-item" href="#">
-                                        <i class="fa fa-check text-success fa-fw"></i>修改项目计划</a>
-                                      <a class="dropdown-item" href="#">
-                                        <i class="fa fa-times text-danger fa-fw"></i>删除项目计划</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
+                          <tbody id="tbody-project">
                           </tbody>
                         </table>
                       </div>
@@ -244,6 +196,9 @@
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="../static/js/dashboard.js"></script>
+  <script type="text/javascript">
+    loadAllInProject();
+  </script>
   <!-- End custom js for this page-->
 </body>
 

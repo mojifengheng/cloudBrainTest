@@ -5,6 +5,13 @@
   [
     {
       "projectName":"康复信息软件测试",
+      "projectDiscribe":"测试康复信息软件Bris的所有功能点",
+      "projectType":"功能测试",
+      "projectStartTime":"2019.1.20",
+      "projectEndTime":"2019.2.1",
+      "projectManager":"jiaxiaoyang",
+      "projectDeveloper":"hekeqiang",
+      "projectTester":"zhangzhi",
       "suit":
       [
           {
@@ -39,6 +46,13 @@
 
     {
       "projectName":"外骨骼接口测试",
+      "projectDiscribe":"测试云脑平台与外骨骼设备的通信",
+      "projectType":"接口测试",
+      "projectStartTime":"2019.2.5",
+      "projectEndTime":"2019.2.15",
+      "projectManager":"jiaxiaoyang",
+      "projectDeveloper":"guozhenkai",
+      "projectTester":"zhangzhi",
       "suit":
       [
         {
@@ -64,6 +78,13 @@
 
     {
       "projectName":"数据库测试",
+      "projectDiscribe":"测试云脑平台与数据库的通信功能",
+      "projectType":"接口测试",
+      "projectStartTime":"2019.2.20",
+      "projectEndTime":"2019.3.1",
+      "projectManager":"jiaxiaoyang",
+      "projectDeveloper":"zhengshujian",
+      "projectTester":"zhangzhi",
       "suit":
       []
     }

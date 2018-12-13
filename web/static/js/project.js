@@ -1,8 +1,16 @@
-function loadAll(){
+function clickNewProject(){
+  if (userName == null){
+    getUrlData();
+  }
+  var projectUrl = "project?userName=" + userName;
+  window.location.href = projectUrl;
+}
+
+function loadAllInProject(){
   getUrlData();
   getUserData(userName);
   loadProject(userName, project);
-  loadTestsuit(project);
+  loadProjectInTable();
 }
 
 function getUrlData(){
@@ -25,29 +33,27 @@ function addChildNode(father, child){
   father.appendChild(child);
 }
 
-function loadProject(userName, project){
-  if (project == null){
-    project = userData["project"][0]["projectName"];
-  }
+function loadProject(userName){
+
   for(var i = 0; i < userData["project"].length; ++i){
     //alert(data["project"][i]["projectName"]);
     var projectName = userData["project"][i]["projectName"];
-    addLi(projectName, userName, project);
+    addLi(projectName, userName);
   }
 
 }
 
-function addLi(projectName, userName, project){
+function addLi(projectName, userName){
     var li_1=document.createElement("li");
     li_1.setAttribute("class","nav-item");
-    d_a = addProjectA(li_1, projectName, userName);
+    d_a = addA(li_1, projectName, userName);
     addI(d_a);
-    addSpan(d_a,projectName, project);
+    addSpan(d_a,projectName);
     var ul = document.getElementById("ul-project");
     addChildNode(ul, li_1);
 }
 
-function addProjectA(label, projectName, userName){
+function addA(label, projectName, userName){
   var a = document.createElement("a");
   a.setAttribute("class", "nav-link");
   var projectUrl = "testsuit?userName=" + userName + "&projectName=" + projectName;
@@ -62,12 +68,9 @@ function addI(label){
   addChildNode(label, i);
 }
 
-function addSpan(label,projectName, project){
+function addSpan(label,projectName){
     var span_1 = document.createElement("span");
     span_1.setAttribute("class","text-black");
-    if (project == projectName){
-      span_1.setAttribute("class","text-blue");
-    }
     span_1.innerHTML=projectName;
     addChildNode(label, span_1);
 }
@@ -101,35 +104,34 @@ function ajax_fun(subUrl, postData){
   return returnText;
 }
 
-function loadTestsuit(project){
-  if (project == null){
-    project = userData["project"][0]["projectName"];
-  }
+function loadProjectInTable(){
   for(var i = 0; i < userData["project"].length; ++i){
-    var projectName = userData["project"][i]["projectName"];
-    if (project == projectName){
-      var allSuit = userData["project"][i]["suit"]
-      for(var j = 0; j < allSuit.length; ++j){
-        var suit = allSuit[j];
-        addSuitTr(suit);
-      }
-    }
+    var project = userData["project"][i];
+    // var projectName = specificProject["projectName"];
+    // var projectDiscribe = specificProject["projectDiscribe"];
+    // var projectStartTime = specificProject["projectStartTime"];
+    addProjectTr(project);
   }
+  // var operation = ["添加测试用例集","查看测试用例集","修改项目计划","删除项目计划"];
+  // addProjectOperation(operation)；
 }
 
-function addSuitTr(suit){
+function addProjectTr(project){
   var tr = document.createElement("tr");
-  var tdData = [suit["suitName"], suit["suitDiscribe"], suit["suitCreatTime"]];
+  var projectName = project["projectName"];
+  var projectDiscribe = project["projectDiscribe"];
+  var projectStartTime = project["projectStartTime"];
+  var tdData = [projectName, projectDiscribe, projectStartTime];
   for(var i = 0; i < 3; ++i){
-    addSuitTd(tr, tdData[i]);
+    addProjectTd(tr, tdData[i]);
   }
-  var operation = ["添加测试用例", "执行测试用例集", "修改测试用例集", "删除测试用例集"];
+  var operation = ["添加测试用例集","查看测试用例集","修改项目计划","删除项目计划"];
   addOperation(tr, operation);
-  var tbody = document.getElementById("tbody-suit");
+  var tbody = document.getElementById("tbody-project");
   addChildNode(tbody, tr);
 }
 
-function addSuitTd(label, data){
+function addProjectTd(label, data){
   var td = document.createElement("td");
   td.innerHTML = data;
   addChildNode(label, td);
@@ -139,11 +141,11 @@ function addOperation(label, operation){
   var td = document.createElement("td");
   var div_1 = addDiv(td, "ticket-actions col-md-2");
   var div_2 = addDiv(div_1, "btn-group dropdown");
-  addSuitButton(div_2);
+  addProjectButton(div_2);
   var div_3 = addDiv(div_2, "dropdown-menu");
   for(var i = 0; i < operation.length; ++i){
-    var a = addSuitA(div_3, operation[i]);
-    addSuitI(a,"fa fa-reply fa-fw");
+    var a = addProjectA(div_3, operation[i]);
+    addProjectI(a,"fa fa-reply fa-fw");
   }
   addChildNode(label, td);
 }
@@ -155,7 +157,7 @@ function addDiv(label, itClass){
   return div;
 }
 
-function addSuitButton(label){
+function addProjectButton(label){
   var button = document.createElement("button");
   button.setAttribute("type", "button");
   button.setAttribute("class", "btn btn-success dropdown-toggle btn-sm");
@@ -166,7 +168,7 @@ function addSuitButton(label){
   addChildNode(label, button);
 }
 
-function addSuitA(label, data){
+function addProjectA(label, data){
   var a = document.createElement("a");
   a.setAttribute("class", "dropdown-item");
   a.setAttribute("href", "#")
@@ -175,17 +177,8 @@ function addSuitA(label, data){
   return a;
 }
 
-function addSuitI(label, itClass){
+function addProjectI(label, itClass){
   var i = document.createElement('i');
   i.setAttribute("class", itClass);
   addChildNode(label, i);
-}
-
-
-function clickNewProject(){
-  if (userName == null){
-    getUrlData();
-  }
-  var projectUrl = "project?userName=" + userName;
-  window.location.href = projectUrl;
 }
