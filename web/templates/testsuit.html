@@ -21,7 +21,10 @@
     var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
   </script>
   <script src="../static/js/jquery-3.3.1.min.js"></script>
+  <script src="../static/js/getData.js"></script>
+  <script src="../static/js/nav.js"></script>
   <script src="../static/js/testsuit.js"></script>
+  <script src="../static/js/click.js"></script>
 </head>
 
 <body>
@@ -246,7 +249,7 @@
   <!-- Custom js for this page-->
   <script src="../static/js/dashboard.js"></script>
   <script type="text/javascript">
-    loadAll();
+    loadAllInTestSuit();
   </script>
   <!-- End custom js for this page-->
 </body>
