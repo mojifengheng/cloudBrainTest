@@ -18,6 +18,12 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="../static/images/favicon.png" />
   <script>var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};</script>
+  <script src="../static/js/jquery-3.3.1.min.js"></script>
+  <script src="../static/js/util.js"></script>
+  <script src="../static/js/getData.js"></script>
+  <script src="../static/js/nav.js"></script>
+  <script src="../static/js/testcase.js"></script>
+  <script src="../static/js/click.js"></script>
 </head>
 
 <body>
@@ -25,25 +31,25 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="testsuit">
+        <a class="navbar-brand brand-logo" href="#">
           <img src="../static/images/logo.svg" alt="logo" />
         </a>
-        <a class="navbar-brand brand-logo-mini" href="testsuit">
+        <a class="navbar-brand brand-logo-mini" href="#">
           <img src="../static/images/logo-mini.svg" alt="logo" />
         </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
           <li class="nav-item">
-            <a href="project" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="mdi mdi-bookmark-plus-outline"></i>项目信息</a>
           </li>
           <li class="nav-item active">
-            <a href="testsuit" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="mdi mdi-elevation-rise"></i>测试用例集</a>
           </li>
           <li class="nav-item">
-            <a href="testcase" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="mdi mdi-elevation-rise"></i>测试用例</a>
           </li>
           <li class="nav-item">
@@ -68,7 +74,7 @@
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
+        <ul class="nav" id="ul-project">
           <li class="nav-item nav-profile">
             <div class="nav-link">
               <div class="user-wrapper">
@@ -87,24 +93,6 @@
                 <i class="mdi mdi-plus"></i>
               </button>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="testsuit">
-              <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">康复信息软件测试</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="testsuit">
-              <i class="menu-icon mdi mdi-robot"></i>
-              <span class="menu-title">外骨骼接口测试</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="testsuit">
-              <i class="menu-icon mdi mdi-database"></i>
-              <span class="menu-title">数据库测试</span>
-            </a>
           </li>
         </ul>
       </nav>
@@ -238,6 +226,9 @@
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="../static/js/dashboard.js"></script>
+  <script type="text/javascript">
+    loadAllInTestcase();
+  </script>
   <!-- End custom js for this page-->
 </body>
 

@@ -34,7 +34,7 @@ function addTrToTestsuit(tableID, tableColName, project){
     for(var j = 0; j < tableColName.length; ++j){
       if (tableColName[j] == "operation"){
         var operation = ["添加测试用例", "执行测试用例集", "修改测试用例集", "删除测试用例集"];
-        var clickOperation = ["#", "#", "#", "#"]
+        var clickOperation = ["#", "#", "#", "#"];
         addOperation(tr, operation, clickOperation);
       } else {
         var tdText = project["suit"][i][tableColName[j]];
@@ -44,5 +44,4 @@ function addTrToTestsuit(tableID, tableColName, project){
     }
     addChildLabel(tbody, tr);
   }
-
 }
