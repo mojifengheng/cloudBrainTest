@@ -20,7 +20,33 @@
             "suitLibrary":"autoItRun",
             "suitSetup":"打开软件",
             "suitTeardown":"关闭软件",
-            "suitCreatTime":"2019.1.20"
+            "suitCreatTime":"2019.1.20",
+            "case":
+            [
+              {
+                "caseName":"软件注册",
+                "caseDiscribe":"测试软件的测试功能",
+                "casePriority":"4",
+                "casePrifix":"",
+                "caseExpectResult":"注册成功",
+                "caseCreateTime":"2019.1.21",
+                "caseStep":["打开软件","注册"],
+                "bug":"false"
+              },
+
+
+              {
+                "caseName":"登陆软件",
+                "caseDiscribe":"测试软件的登陆功能",
+                "casePriority":"4",
+                "casePrifix":"注册账号",
+                "caseExpectResult":"登陆成功",
+                "caseCreateTime":"2019.1.21",
+                "caseStep":["打开软件","登陆"],
+                "bug":"true"
+              }
+
+            ]
           },
 
           {
@@ -29,7 +55,32 @@
             "suitLibrary":"autoItRun",
             "suitSetup":"登陆",
             "suitTeardown":"关闭软件",
-            "suitCreatTime":"2019.1.25"
+            "suitCreatTime":"2019.1.25",
+            "case":
+            [
+              {
+                "caseName":"床号搜索",
+                "caseDiscribe":"按照床号搜索患者",
+                "casePriority":"3",
+                "casePrifix":"登陆软件",
+                "caseExpectResult":"患者信息",
+                "caseCreateTime":"2019.1.25",
+                "caseStep":["打开软件","登陆","输入","点击搜索"],
+                "bug":"false"
+              },
+
+
+              {
+                "caseName":"姓名搜索",
+                "caseDiscribe":"按照姓名搜索患者",
+                "casePriority":"3",
+                "casePrifix":"登陆软件",
+                "caseExpectResult":"患者信息",
+                "caseCreateTime":"2019.1.25",
+                "caseStep":["打开软件","登陆","输入","点击搜索"],
+                "bug":"true"
+              }
+            ]
           },
 
           {
@@ -38,7 +89,32 @@
             "suitLibrary":"autoItRun",
             "suitSetup":"登陆，确定患者",
             "suitTeardown":"关闭软件",
-            "suitCreatTime":"2019.1.28"
+            "suitCreatTime":"2019.1.28",
+            "case":
+            [
+              {
+                "caseName":"治疗成功",
+                "caseDiscribe":"测试治疗成功之后的操作",
+                "casePriority":"5",
+                "casePrifix":"登陆软件，确定患者",
+                "caseExpectResult":"提交成功",
+                "caseCreateTime":"2019.1.28",
+                "caseStep":["打开软件","登陆","确认患者","点击治疗","勾选项目","提交"],
+                "bug":"true"
+              },
+
+
+              {
+                "caseName":"治疗失败",
+                "caseDiscribe":"测试治疗失败之后的操作",
+                "casePriority":"5",
+                "casePrifix":"登陆软件，确认患者",
+                "caseExpectResult":"提交成功",
+                "caseCreateTime":"2019.1.28",
+                "caseStep":["打开软件","登陆","确认患者","点击治疗","输入","提交"],
+                "bug":"false"
+              }
+            ]
           }
       ]
     },
@@ -61,7 +137,32 @@
           "suitLibrary":"httpLibrary",
           "suitSetup":"",
           "suitTeardown":"",
-          "suitCreatTime":"2019.2.1"
+          "suitCreatTime":"2019.2.1",
+          "case":
+          [
+            {
+              "caseName":"网址测试",
+              "caseDiscribe":"测试http之间是否通信成功",
+              "casePriority":"5",
+              "casePrifix":"",
+              "caseExpectResult":"true",
+              "caseCreateTime":"2019.2.2",
+              "caseStep":["输入","提交"],
+              "bug":"true"
+            },
+
+
+            {
+              "caseName":"数据测试",
+              "caseDiscribe":"测试http数据传输是否正常",
+              "casePriority":"5",
+              "casePrifix":"",
+              "caseExpectResult":"true",
+              "caseCreateTime":"2019.2.2",
+              "caseStep":["输入","提交"],
+              "bug":"false"
+            }
+          ]
         },
 
         {
@@ -70,7 +171,32 @@
           "suitLibrary":"mqttLibrary",
           "suitSetup":"",
           "suitTeardown":"",
-          "suitCreatTime":"2019.2.10"
+          "suitCreatTime":"2019.2.10",
+          "case":
+          [
+            {
+              "caseName":"网址测试",
+              "caseDiscribe":"测试mqtt之间是否通信成功",
+              "casePriority":"5",
+              "casePrifix":"",
+              "caseExpectResult":"true",
+              "caseCreateTime":"2019.2.2",
+              "caseStep":["输入","提交"],
+              "bug":"true"
+            },
+
+
+            {
+              "caseName":"数据测试",
+              "caseDiscribe":"测试mqtt数据传输是否正常",
+              "casePriority":"5",
+              "casePrifix":"",
+              "caseExpectResult":"true",
+              "caseCreateTime":"2019.2.2",
+              "caseStep":["输入","提交"],
+              "bug":"false"
+            }
+          ]
         }
       ]
     },

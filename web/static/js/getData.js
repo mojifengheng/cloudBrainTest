@@ -1,15 +1,18 @@
 function getUrlData(){
   var urlUserName = null;
   var urlProjectName = null;
+  var urlTestsuitName = null;
   try{
     urlUserName = decodeURI(document.URL.split('?')[1].split("&")[0].split('=')[1]);
     urlProjectName = decodeURI(document.URL.split('?')[1].split("&")[1].split('=')[1]);
+    urlTestsuitName = decodeURI(document.URL.split('?')[1].split("&")[2].split('=')[1]);
   } catch(err){
     //TODO：here we should do something or report log
   }
   var urlData = {
     "urlUserName":urlUserName,
-    "urlProjectName":urlProjectName
+    "urlProjectName":urlProjectName,
+    "urlTestsuitName":urlTestsuitName
   };
   return urlData;
 }

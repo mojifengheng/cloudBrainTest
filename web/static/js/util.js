@@ -16,7 +16,7 @@ function addChildLabel(fatherLabel, childLabel){
   fatherLabel.appendChild(childLabel)
 }
 
-function addOperation(label, operation, clickOperation){
+function addOperation(label, operation, clickOperation, itName=null){
   var td = createHtmlLabel("td", null, null);
   var div1Attribute = {"class":"ticket-actions col-md-2"};
   var div1 = createHtmlLabel("div", div1Attribute);
@@ -42,8 +42,8 @@ function addOperation(label, operation, clickOperation){
   var div3 = createHtmlLabel("div", div3Attribute);
 
   for(var i = 0; i < operation.length; ++i){
-    var aHrefUrl = clickOperation[i];
-    var aAttribute = {"class":"dropdown-item", "href":aHrefUrl};
+    var eachClickOperation = clickOperation[i];
+    var aAttribute = {"class":"dropdown-item", "onclick":eachClickOperation, "name": itName};
     var a = createHtmlLabel("a", aAttribute, operation[i]);
     addChildLabel(div3, a);
 

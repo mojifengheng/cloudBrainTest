@@ -22,20 +22,21 @@ function loadTestsuitTable(tableID, tableColName, urlData, userData){
     var userProjectName = userData["project"][i]["projectName"];
     if (urlProjectName == userProjectName){
       var project = userData["project"][i];
-      addTrToTestsuit(tableID, tableColName, project);
+      addTrToTestsuit(tableID, tableColName, urlData, project);
     }
   }
 }
 
-function addTrToTestsuit(tableID, tableColName, project){
+function addTrToTestsuit(tableID, tableColName, urlData, project){
   var tbody = document.getElementById(tableID);
   for (var i = 0; i < project["suit"].length; ++i){
     var tr = createHtmlLabel("tr");
     for(var j = 0; j < tableColName.length; ++j){
       if (tableColName[j] == "operation"){
         var operation = ["添加测试用例", "执行测试用例集", "修改测试用例集", "删除测试用例集"];
-        var clickOperation = ["#", "#", "#", "#"];
-        addOperation(tr, operation, clickOperation);
+        var itName = urlData["urlUserName"] + "_" + project["projectName"] + "_" + project["suit"][i]["suitName"];
+        var clickOperation = ["clickAddTestcase(this);", "#", "#", "#"];
+        addOperation(tr, operation, clickOperation, itName);
       } else {
         var tdText = project["suit"][i][tableColName[j]];
         var td = createHtmlLabel("td", null, tdText);
