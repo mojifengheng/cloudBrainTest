@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 import json
+import os
+import io
 
 app = Flask(__name__)
 
@@ -44,6 +46,35 @@ def getData():
     with open(fileName, "r") as f:
         data = json.loads(f.read())
     return json.dumps(data)
+
+
+@app.route("/setFormValueTestsuit", methods=["POST", "GET"])
+def setFormValueTestsuit():
+    returnFlag = "false"
+    writeJson = {
+        "suitName": None,
+        "suitDiscribe": None,
+        "suitLibrary": None,
+        "suitSetup": None,
+        "suitTeardown": None,
+        "suitCreatTime": None,
+        "case": None
+    }
+    for key in writeJson:
+        writeJson[key] = request.form.get(key)
+    fileName = request.form.get("userName") + ".json"
+    if fileName in os.listdir("./data"):
+        with open("data/"+fileName, "r") as f:
+            fileJson = json.loads(f.read())
+        for project in fileJson["project"]:
+            if project["projectName"] == request.form.get("projectName"):
+                # print(project["projectStartTime"])
+                project["suit"].append(writeJson)
+                returnFlag = "true"
+        with open("data/" + fileName, "w") as f:
+            json.dump(fileJson, f, indent=4, ensure_ascii=False)
+
+    return returnFlag
 
 
 if __name__ == "__main__":

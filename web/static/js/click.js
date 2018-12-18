@@ -99,3 +99,25 @@ function getClickLabelName(e){
   }
   return labelNameDict;
 }
+
+function clickSubmitTestsuit(){
+  var urlData = getUrlData();
+  var valueJson = {
+    "userName" : urlData["urlUserName"],
+    "projectName":urlData["urlProjectName"],
+    "suitName":null,
+    "suitDiscribe":null,
+    "suitLibrary":null,
+    "suitSetup":null,
+    "suitTeardown":null,
+    "suitCreatTime":null,
+    "case":[]
+  };
+  var ids = ["suitName","suitDiscribe","suitLibrary","suitSetup","suitTeardown","suitCreatTime"];
+  for(var i = 0; i < ids.length; ++i){
+    var formValue = document.getElementById(ids[i]).value;
+    valueJson[ids[i]] = formValue;
+  }
+  var subUrl = "setFormValueTestsuit";
+  var isSuccess = JSON.parse(ajax_fun(subUrl, valueJson));
+}
