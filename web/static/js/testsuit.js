@@ -35,7 +35,7 @@ function addTrToTestsuit(tableID, tableColName, urlData, project){
       if (tableColName[j] == "operation"){
         var operation = ["添加测试用例", "执行测试用例集", "修改测试用例集", "删除测试用例集"];
         var itName = urlData["urlUserName"] + "_" + project["projectName"] + "_" + project["suit"][i]["suitName"];
-        var clickOperation = ["clickAddTestcase(this);", "#", "#", "#"];
+        var clickOperation = ["clickAddTestcase(this);", "#", "clickChangeTestsuit(this)", "#"];
         addOperation(tr, operation, clickOperation, itName);
       } else {
         var tdText = project["suit"][i][tableColName[j]];

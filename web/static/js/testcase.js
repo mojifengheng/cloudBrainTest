@@ -36,9 +36,13 @@ function addTrToTestcase(tableID, tableColName, urlData, testcase){
   var tr = createHtmlLabel("tr", null, null);
   for(var i = 0; i < tableColName.length; ++i){
     if (tableColName[i] == "operation"){
-      var operation = ["执行测试用例","删除测试用例","Bug记录"];
-      var clickOperation = ["#","#","#"];
-      addOperation(tr, operation, clickOperation);
+      var operation = ["执行测试用例","修改测试用例","删除测试用例","Bug记录"];
+      var clickOperation = ["#","clickChangeTestcase(this)","#", "#"];
+      var itName = urlData["urlUserName"] + "_" +
+                   urlData["urlProjectName"] + "_" +
+                   urlData["urlTestsuitName"] + "_" +
+                   testcase["caseName"];
+      addOperation(tr, operation, clickOperation, itName);
     } else {
       var tdText = testcase[tableColName[i]];
       var td = createHtmlLabel("td", null, tdText);
