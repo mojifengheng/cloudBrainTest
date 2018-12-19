@@ -33,11 +33,12 @@ function loadTestcaseInTable(tableID, tableColName, urlData, userData){
 
 function addTrToTestcase(tableID, tableColName, urlData, testcase){
   var tbody = document.getElementById(tableID);
-  var tr = createHtmlLabel("tr", null, null);
+  var trAttribute = {"id":testcase["caseName"]};
+  var tr = createHtmlLabel("tr", trAttribute, null);
   for(var i = 0; i < tableColName.length; ++i){
     if (tableColName[i] == "operation"){
-      var operation = ["执行测试用例","修改测试用例","删除测试用例","Bug记录"];
-      var clickOperation = ["#","clickChangeTestcase(this)","#", "#"];
+      var operation = ["执行测试用例","修改测试用例","删除测试用例","Bug标记", "Bug取消"];
+      var clickOperation = ["#","clickChangeTestcase(this)","#", "clickBugRecord(this)", "clickBugCancel(this)"];
       var itName = urlData["urlUserName"] + "_" +
                    urlData["urlProjectName"] + "_" +
                    urlData["urlTestsuitName"] + "_" +
@@ -45,6 +46,7 @@ function addTrToTestcase(tableID, tableColName, urlData, testcase){
       addOperation(tr, operation, clickOperation, itName);
     } else {
       var tdText = testcase[tableColName[i]];
+      //TODO:should check suit'bug, if suit'bug is true, then we need a td attribute for td-color 
       var td = createHtmlLabel("td", null, tdText);
       addChildLabel(tr, td);
     }

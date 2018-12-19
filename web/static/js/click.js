@@ -149,3 +149,17 @@ function clickRemoveTestsuit(e){
     location.reload()
   }
 }
+
+//TODO: when we set tr's attribute, we need send the bug status to server to change user's json file
+function clickBugRecord(e){
+  var clickName = getClickLabelName(e);
+  var tr = document.getElementById(clickName["testcaseName"]);
+  tr.setAttribute("class", "text-danger");
+}
+
+//TODO: when we set tr's attribute, we need send the bug status to server to change user's json file
+function clickBugCancel(e){
+  var clickName = getClickLabelName(e);
+  var tr = document.getElementById(clickName["testcaseName"]);
+  tr.setAttribute("class", "");
+}
