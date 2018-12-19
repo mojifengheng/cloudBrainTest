@@ -119,5 +119,33 @@ function clickSubmitTestsuit(){
     valueJson[ids[i]] = formValue;
   }
   var subUrl = "setFormValueTestsuit";
-  var isSuccess = JSON.parse(ajax_fun(subUrl, valueJson));
+  var isSuccess = ajax_fun(subUrl, valueJson);
+  if (isSuccess == "true"){
+    alert("测试用例添加成功")
+    location.reload();
+  }
+}
+
+function clickCancelTestsuit(){
+  var ids = ["suitName","suitDiscribe","suitLibrary","suitSetup","suitTeardown","suitCreatTime"];
+  removeAllFormValue(ids);
+}
+
+
+function removeAllFormValue(ids){
+  for(var i = 0; i < ids.length; ++i){
+    var form = document.getElementById(ids[i]);
+    form.setAttribute("value", "");
+  }
+}
+
+
+function clickRemoveTestsuit(e){
+  var urlData = getClickLabelName(e);
+  var subUrl = "removeTestsuit";
+  var isSuccess = ajax_fun(subUrl, urlData);
+  if (isSuccess == "true"){
+    alert("测试用例删除成功！")
+    location.reload()
+  }
 }

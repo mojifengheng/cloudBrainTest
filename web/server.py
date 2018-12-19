@@ -77,6 +77,33 @@ def setFormValueTestsuit():
     return returnFlag
 
 
+@app.route("/removeTestsuit", methods=["POST", "GET"])
+def removeTestsuit():
+    removeSuccess = "false"
+    urlData = {
+        "userName": None,
+        "projectName": None,
+        "testsuitName": None,
+        "testcaseName": None
+    }
+    for key in urlData:
+        urlData[key] = request.form.get(key)
+    fileName = "data/" + urlData["userName"] + ".json"
+    with open(fileName, "r") as f:
+        fileJson = json.loads(f.read())
+    for project in fileJson["project"]:
+        if project["projectName"] == urlData["projectName"]:
+            for suit in project["suit"]:
+                if suit["suitName"] == urlData["testsuitName"]:
+                    # print(suit["suitName"])
+                    project["suit"].remove(suit)
+                    # print(len(project["suit"]))
+                    removeSuccess = "true"
+    with open(fileName, "w") as f:
+        json.dump(fileJson, f, indent=4, ensure_ascii=False)
+    return removeSuccess
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',
             port='1817',
