@@ -7,19 +7,19 @@ function clickNewProject(){
 }
 
 function clickAddTestcase(e){
-  var name = getClickLabelName(e);
+  var name = getClickLabelData(e);
   var urlHref = "testcase?userName=" + name["userName"] + "&project=" + name["projectName"] + "&testsuit=" + name["testsuitName"];
   window.location.href = urlHref;
 }
 
 function clickAddTestsuit(e){
-  var name = getClickLabelName(e);
+  var name = getClickLabelData(e);
   var urlHref = "testsuit?userName=" + name["userName"] + "&project=" + name["projectName"];
   window.location.href = urlHref;
 }
 
 function clickChangeProject(e){
-  var clickData = getClickLabelName(e);
+  var clickData = getClickLabelData(e);
   var userData = getUserData(clickData["userName"]);
   var project = findDataFromFile("project", userData, clickData);
   var ids = ["projectName","projectDiscribe","projectType","projectStartTime","projectEndTime","projectManager","projectDeveloper","projectTester"];
@@ -28,7 +28,7 @@ function clickChangeProject(e){
 
 
 function clickChangeTestsuit(e){
-  var clickData = getClickLabelName(e);
+  var clickData = getClickLabelData(e);
   var userData = getUserData(clickData["userName"]);
   var suit = findDataFromFile("testsuit", userData, clickData);
   var ids = ["suitName","suitDiscribe","suitLibrary","suitSetup","suitTeardown","suitCreatTime"];
@@ -37,7 +37,7 @@ function clickChangeTestsuit(e){
 
 
 function clickChangeTestcase(e){
-  var clickData = getClickLabelName(e);
+  var clickData = getClickLabelData(e);
   var userData = getUserData(clickData["userName"]);
   var testcase = findDataFromFile("testcase", userData, clickData);
   var ids = ["caseName","caseDiscribe","casePriority","casePrifix","caseStep","caseExpectResult","caseCreateTime"];
@@ -45,13 +45,7 @@ function clickChangeTestcase(e){
 }
 
 
-function setFormValue(formId, value){
-  var obj = document.getElementById(formId);
-  obj.value = value;
-}
-
-
-function getClickLabelName(e){
+function getClickLabelData(e){
   var labelNameDict = {
     "userName" : null,
     "projectName" : null,
@@ -176,7 +170,7 @@ function removeAllFormValue(ids){
 
 
 function clickRemoveTestsuit(e){
-  var urlData = getClickLabelName(e);
+  var urlData = getClickLabelData(e);
   var subUrl = "removeTestsuit";
   var isSuccess = ajax_fun(subUrl, urlData);
   if (isSuccess == "true"){
@@ -186,7 +180,7 @@ function clickRemoveTestsuit(e){
 }
 
 function clickRemoveProject(e){
-  var urlData = getClickLabelName(e);
+  var urlData = getClickLabelData(e);
   var subUrl = "removeProject";
   var isSuccess = ajax_fun(subUrl, urlData);
   if (isSuccess == "true"){
@@ -196,7 +190,7 @@ function clickRemoveProject(e){
 }
 
 function clickRemoveTestcase(e){
-  var urlData = getClickLabelName(e);
+  var urlData = getClickLabelData(e);
   var subUrl = "removeTestcase";
   var isSuccess = ajax_fun(subUrl, urlData);
   if (isSuccess == "true"){
@@ -207,14 +201,14 @@ function clickRemoveTestcase(e){
 
 //TODO: when we set tr's attribute, we need send the bug status to server to change user's json file
 function clickBugRecord(e){
-  var clickName = getClickLabelName(e);
+  var clickName = getClickLabelData(e);
   var tr = document.getElementById(clickName["testcaseName"]);
   tr.setAttribute("class", "text-danger");
 }
 
 //TODO: when we set tr's attribute, we need send the bug status to server to change user's json file
 function clickBugCancel(e){
-  var clickName = getClickLabelName(e);
+  var clickName = getClickLabelData(e);
   var tr = document.getElementById(clickName["testcaseName"]);
   tr.setAttribute("class", "");
 }
