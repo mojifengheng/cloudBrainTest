@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "RFenv/bin/python"
+    "python.pythonPath": "RFenv/bin/python",
+    "python.formatting.provider": "yapf"
 }

@@ -213,8 +213,8 @@ def removeTestcase():
     with open(fileName, "w") as f:
         json.dump(fileJson, f, indent=4, ensure_ascii=False)
     return removeSuccess
-                   
 
+    
 if __name__ == "__main__":
     app.run(host='0.0.0.0',
             port='1817',
