@@ -77,7 +77,7 @@ function clickChangeTestcase(e){
 
 function setFormValue(formId, value){
   var obj = document.getElementById(formId);
-  obj.setAttribute("value", value);
+  obj.value = value;
 }
 
 
@@ -126,8 +126,73 @@ function clickSubmitTestsuit(){
   }
 }
 
+function clickSubmitProject(){
+  var urlData = getUrlData();
+  var valueJson = {
+    "userName" : urlData["urlUserName"],
+    "projectManager": null,
+    "projectDiscribe": null,
+    "suit": [],
+    "projectTester": null,
+    "projectName": null,
+    "projectStartTime": null,
+    "projectDeveloper": null,
+    "projectType": null,
+    "projectEndTime": null
+  };
+  var ids = ["projectName","projectDiscribe","projectType","projectStartTime","projectEndTime","projectManager","projectDeveloper","projectTester"];
+  for(var i = 0; i < ids.length; ++i){
+    var formValue = document.getElementById(ids[i]).value;
+    valueJson[ids[i]] = formValue
+  }
+  var subUrl = "writeProjectToUser";
+  var isSuccess = ajax_fun(subUrl, valueJson);
+  if (isSuccess == "true"){
+    alert("添加项目成功");
+    location.reload();
+  }
+}
+
+function clickSubmitTestcase(){
+  var urlData = getUrlData();
+  var valueJson = {
+    "userName" : urlData["urlUserName"],
+    "projectName": urlData["urlProjectName"],
+    "testsuitName" : urlData["urlTestsuitName"],
+    "caseName": null,
+    "caseStep": null,
+    "casePriority": null,
+    "caseDiscribe": null,
+    "casePrifix": null,
+    "caseCreateTime": null,
+    "caseExpectResult": null,
+    "bug": "false"
+  };
+  var ids = ["caseName","caseDiscribe","casePriority","casePrifix","caseStep","caseExpectResult","caseCreateTime"];
+  for(var i = 0; i < ids.length; ++i){
+    var formValue = document.getElementById(ids[i]).value;
+    valueJson[ids[i]] = formValue
+  }
+  var subUrl = "writeTestCase";
+  var isSuccess = ajax_fun(subUrl, valueJson);
+  if (isSuccess == "true"){
+    alert("添加测试用例成功")
+    location.reload();
+  }
+}
+
 function clickCancelTestsuit(){
   var ids = ["suitName","suitDiscribe","suitLibrary","suitSetup","suitTeardown","suitCreatTime"];
+  removeAllFormValue(ids);
+}
+
+function clickCancelProject(){
+  var ids = ["projectName","projectDiscribe","projectType","projectStartTime","projectEndTime","projectManager","projectDeveloper","projectTester"];
+  removeAllFormValue(ids);  
+}
+
+function clickCancelTestcase(){
+  var ids = ["caseName","caseDiscribe","casePriority","casePrifix","caseStep","caseExpectResult","caseCreateTime"];
   removeAllFormValue(ids);
 }
 
@@ -135,7 +200,7 @@ function clickCancelTestsuit(){
 function removeAllFormValue(ids){
   for(var i = 0; i < ids.length; ++i){
     var form = document.getElementById(ids[i]);
-    form.setAttribute("value", "");
+    form.value = "";
   }
 }
 
@@ -146,6 +211,26 @@ function clickRemoveTestsuit(e){
   var isSuccess = ajax_fun(subUrl, urlData);
   if (isSuccess == "true"){
     alert("测试用例删除成功！")
+    location.reload()
+  }
+}
+
+function clickRemoveProject(e){
+  var urlData = getClickLabelName(e);
+  var subUrl = "removeProject";
+  var isSuccess = ajax_fun(subUrl, urlData);
+  if (isSuccess == "true"){
+    alert("项目删除成功")
+    location.reload()
+  }
+}
+
+function clickRemoveTestcase(e){
+  var urlData = getClickLabelName(e);
+  var subUrl = "removeTestcase";
+  var isSuccess = ajax_fun(subUrl, urlData);
+  if (isSuccess == "true"){
+    alert("测试用例删除成功")
     location.reload()
   }
 }

@@ -2,53 +2,59 @@
     "userName": "zhangzhi",
     "project": [
         {
-            "projectManager": "jiaxiaoyang",
             "projectDiscribe": "测试康复信息软件Bris的所有功能点",
+            "projectName": "康复信息软件测试",
+            "projectDeveloper": "hekeqiang",
+            "projectManager": "jiaxiaoyang",
+            "projectType": "功能测试",
+            "projectStartTime": "2019.1.20",
             "suit": [
                 {
+                    "suitCreatTime": "2019.1.20",
+                    "suitName": "软件注册登陆",
+                    "suitTeardown": "关闭软件",
+                    "suitSetup": "打开软件",
                     "suitLibrary": "autoItRun",
                     "case": [
                         {
                             "bug": "false",
                             "casePriority": "4",
-                            "caseName": "软件注册",
-                            "caseDiscribe": "测试软件的测试功能",
                             "caseExpectResult": "注册成功",
                             "casePrifix": "",
                             "caseStep": [
                                 "打开软件",
                                 "注册"
                             ],
+                            "caseDiscribe": "测试软件的测试功能",
+                            "caseName": "软件注册",
                             "caseCreateTime": "2019.1.21"
                         },
                         {
                             "bug": "true",
                             "casePriority": "4",
-                            "caseName": "登陆软件",
-                            "caseDiscribe": "测试软件的登陆功能",
                             "caseExpectResult": "登陆成功",
                             "casePrifix": "注册账号",
                             "caseStep": [
                                 "打开软件",
                                 "登陆"
                             ],
+                            "caseDiscribe": "测试软件的登陆功能",
+                            "caseName": "登陆软件",
                             "caseCreateTime": "2019.1.21"
                         }
                     ],
-                    "suitCreatTime": "2019.1.20",
-                    "suitName": "软件注册登陆",
-                    "suitDiscribe": "测试康复软件的注册登陆功能",
-                    "suitSetup": "打开软件",
-                    "suitTeardown": "关闭软件"
+                    "suitDiscribe": "测试康复软件的注册登陆功能"
                 },
                 {
+                    "suitCreatTime": "2019.1.25",
+                    "suitName": "患者搜索",
+                    "suitTeardown": "关闭软件",
+                    "suitSetup": "登陆",
                     "suitLibrary": "autoItRun",
                     "case": [
                         {
                             "bug": "false",
                             "casePriority": "3",
-                            "caseName": "床号搜索",
-                            "caseDiscribe": "按照床号搜索患者",
                             "caseExpectResult": "患者信息",
                             "casePrifix": "登陆软件",
                             "caseStep": [
@@ -57,13 +63,13 @@
                                 "输入",
                                 "点击搜索"
                             ],
+                            "caseDiscribe": "按照床号搜索患者",
+                            "caseName": "床号搜索",
                             "caseCreateTime": "2019.1.25"
                         },
                         {
                             "bug": "true",
                             "casePriority": "3",
-                            "caseName": "姓名搜索",
-                            "caseDiscribe": "按照姓名搜索患者",
                             "caseExpectResult": "患者信息",
                             "casePrifix": "登陆软件",
                             "caseStep": [
@@ -72,126 +78,120 @@
                                 "输入",
                                 "点击搜索"
                             ],
+                            "caseDiscribe": "按照姓名搜索患者",
+                            "caseName": "姓名搜索",
                             "caseCreateTime": "2019.1.25"
                         }
                     ],
-                    "suitCreatTime": "2019.1.25",
-                    "suitName": "患者搜索",
-                    "suitDiscribe": "搜索患者姓名或者床号，获得患者信息",
-                    "suitSetup": "登陆",
-                    "suitTeardown": "关闭软件"
+                    "suitDiscribe": "搜索患者姓名或者床号，获得患者信息"
                 },
                 {
-                    "suitDiscribe": "提交患者治疗信息",
-                    "case": null,
                     "suitCreatTime": "2019.1.28",
                     "suitName": "患者治疗",
-                    "suitLibrary": "autoItRun",
+                    "suitTeardown": "关闭软件",
                     "suitSetup": "登陆，确定患者",
-                    "suitTeardown": "关闭软件"
+                    "suitLibrary": "autoItRun",
+                    "case": null,
+                    "suitDiscribe": "提交患者治疗信息"
                 }
             ],
-            "projectTester": "zhangzhi",
-            "projectName": "康复信息软件测试",
-            "projectStartTime": "2019.1.20",
-            "projectDeveloper": "hekeqiang",
-            "projectType": "功能测试",
-            "projectEndTime": "2019.2.1"
+            "projectEndTime": "2019.2.1",
+            "projectTester": "zhangzhi"
         },
         {
-            "projectManager": "jiaxiaoyang",
             "projectDiscribe": "测试云脑平台与外骨骼设备的通信",
+            "projectName": "外骨骼接口测试",
+            "projectDeveloper": "guozhenkai",
+            "projectManager": "jiaxiaoyang",
+            "projectType": "接口测试",
+            "projectStartTime": "2019.2.5",
             "suit": [
                 {
+                    "suitCreatTime": "2019.2.1",
+                    "suitName": "http接口测试",
+                    "suitTeardown": "",
+                    "suitSetup": "",
                     "suitLibrary": "httpLibrary",
                     "case": [
                         {
                             "bug": "true",
                             "casePriority": "5",
-                            "caseName": "网址测试",
-                            "caseDiscribe": "测试http之间是否通信成功",
                             "caseExpectResult": "true",
                             "casePrifix": "",
                             "caseStep": [
                                 "输入",
                                 "提交"
                             ],
+                            "caseDiscribe": "测试http之间是否通信成功",
+                            "caseName": "网址测试",
                             "caseCreateTime": "2019.2.2"
                         },
                         {
                             "bug": "false",
                             "casePriority": "5",
-                            "caseName": "数据测试",
-                            "caseDiscribe": "测试http数据传输是否正常",
                             "caseExpectResult": "true",
                             "casePrifix": "",
                             "caseStep": [
                                 "输入",
                                 "提交"
                             ],
+                            "caseDiscribe": "测试http数据传输是否正常",
+                            "caseName": "数据测试",
                             "caseCreateTime": "2019.2.2"
                         }
                     ],
-                    "suitCreatTime": "2019.2.1",
-                    "suitName": "http接口测试",
-                    "suitDiscribe": "测试云脑平台与外骨骼的http协议",
-                    "suitSetup": "",
-                    "suitTeardown": ""
+                    "suitDiscribe": "测试云脑平台与外骨骼的http协议"
                 },
                 {
+                    "suitCreatTime": "2019.2.10",
+                    "suitName": "mqtt接口测试",
+                    "suitTeardown": "",
+                    "suitSetup": "",
                     "suitLibrary": "mqttLibrary",
                     "case": [
                         {
                             "bug": "true",
                             "casePriority": "5",
-                            "caseName": "网址测试",
-                            "caseDiscribe": "测试mqtt之间是否通信成功",
                             "caseExpectResult": "true",
                             "casePrifix": "",
                             "caseStep": [
                                 "输入",
                                 "提交"
                             ],
+                            "caseDiscribe": "测试mqtt之间是否通信成功",
+                            "caseName": "网址测试",
                             "caseCreateTime": "2019.2.2"
                         },
                         {
                             "bug": "false",
                             "casePriority": "5",
-                            "caseName": "数据测试",
-                            "caseDiscribe": "测试mqtt数据传输是否正常",
                             "caseExpectResult": "true",
                             "casePrifix": "",
                             "caseStep": [
                                 "输入",
                                 "提交"
                             ],
+                            "caseDiscribe": "测试mqtt数据传输是否正常",
+                            "caseName": "数据测试",
                             "caseCreateTime": "2019.2.2"
                         }
                     ],
-                    "suitCreatTime": "2019.2.10",
-                    "suitName": "mqtt接口测试",
-                    "suitDiscribe": "测试云脑平台与外骨骼的mqtt协议",
-                    "suitSetup": "",
-                    "suitTeardown": ""
+                    "suitDiscribe": "测试云脑平台与外骨骼的mqtt协议"
                 }
             ],
-            "projectTester": "zhangzhi",
-            "projectName": "外骨骼接口测试",
-            "projectStartTime": "2019.2.5",
-            "projectDeveloper": "guozhenkai",
-            "projectType": "接口测试",
-            "projectEndTime": "2019.2.15"
+            "projectEndTime": "2019.2.15",
+            "projectTester": "zhangzhi"
         },
         {
-            "projectManager": "jiaxiaoyang",
             "projectDiscribe": "测试云脑平台与数据库的通信功能",
-            "suit": [],
-            "projectTester": "zhangzhi",
             "projectName": "数据库测试",
-            "projectStartTime": "2019.2.20",
             "projectDeveloper": "zhengshujian",
+            "projectManager": "jiaxiaoyang",
             "projectType": "接口测试",
-            "projectEndTime": "2019.3.1"
+            "projectStartTime": "2019.2.20",
+            "suit": [],
+            "projectEndTime": "2019.3.1",
+            "projectTester": "zhangzhi"
         }
     ],
     "password": "123456"

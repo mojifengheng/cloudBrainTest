@@ -25,7 +25,7 @@ function addTrToProjectTable(tableID, tableColName, urlData, project){
     if (tableColName[i] == "operation"){
       var operation = ["创建测试用例集","修改项目计划", "删除项目"];
       var itName = urlData["urlUserName"] + "_" + project["projectName"];
-      var clickOperation = ["clickAddTestsuit(this)","clickChangeProject(this)","#"];
+      var clickOperation = ["clickAddTestsuit(this)","clickChangeProject(this)","clickRemoveProject(this)"];
       addOperation(tr, operation, clickOperation, itName);
     } else {
       var tdText = project[tableColName[i]];

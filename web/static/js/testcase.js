@@ -38,7 +38,7 @@ function addTrToTestcase(tableID, tableColName, urlData, testcase){
   for(var i = 0; i < tableColName.length; ++i){
     if (tableColName[i] == "operation"){
       var operation = ["执行测试用例","修改测试用例","删除测试用例","Bug标记", "Bug取消"];
-      var clickOperation = ["#","clickChangeTestcase(this)","#", "clickBugRecord(this)", "clickBugCancel(this)"];
+      var clickOperation = ["#","clickChangeTestcase(this)","clickRemoveTestcase(this)", "clickBugRecord(this)", "clickBugCancel(this)"];
       var itName = urlData["urlUserName"] + "_" +
                    urlData["urlProjectName"] + "_" +
                    urlData["urlTestsuitName"] + "_" +

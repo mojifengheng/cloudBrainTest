@@ -62,6 +62,7 @@ def setFormValueTestsuit():
     }
     for key in writeJson:
         writeJson[key] = request.form.get(key)
+    writeJson["case"] = []
     fileName = request.form.get("userName") + ".json"
     if fileName in os.listdir("./data"):
         with open("data/"+fileName, "r") as f:
@@ -75,6 +76,66 @@ def setFormValueTestsuit():
             json.dump(fileJson, f, indent=4, ensure_ascii=False)
 
     return returnFlag
+
+
+
+@app.route("/writeProjectToUser", methods=["POST", "GET"])
+def writeProjectToUser():
+    writeSuccess = "false"
+    writeJson = {
+        "projectManager": None,
+        "projectDiscribe": None,
+        "suit": [],
+        "projectTester": None,
+        "projectName": None,
+        "projectStartTime": None,
+        "projectDeveloper": None,
+        "projectType": None,
+        "projectEndTime": None
+    }
+    for key in writeJson:
+        writeJson[key] = request.form.get(key)
+    writeJson["suit"] = []
+    fileName = request.form.get("userName") + ".json"
+    if fileName in os.listdir("./data"):
+        with open("data/" + fileName, "r") as f:
+            fileJson = json.loads(f.read())
+        fileJson["project"].append(writeJson)
+        writeSuccess = "true"
+        with open("data/" + fileName, "w") as f:
+            json.dump(fileJson, f, indent=4, ensure_ascii=False)
+    return writeSuccess
+
+
+@app.route("/writeTestCase", methods=["POST", "GET"])
+def writeTestCase():
+    writeSuccess = "false"
+    writeJson = {
+        "caseName": None,
+        "caseStep": None,
+        "casePriority": None,
+        "caseDiscribe": None,
+        "casePrifix": None,
+        "caseCreateTime": None,
+        "caseExpectResult": None,
+        "bug": "false"
+    }
+    for key in writeJson:
+        writeJson[key] = request.form.get(key)
+    fileName = request.form.get("userName") + ".json"
+    if fileName in os.listdir("./data"):
+        with open("data/" + fileName, "r") as f:
+            fileJson = json.loads(f.read())
+        for project in fileJson["project"]:
+            if project["projectName"] == request.form.get("projectName"):
+                for suit in project["suit"]:
+                    if suit["suitName"] == request.form.get("testsuitName"):
+                        suit["case"].append(writeJson)
+                        writeSuccess = "true"
+
+        with open("data/" + fileName, "w") as f:
+            json.dump(fileJson, f, indent=4, ensure_ascii=False)
+    return writeSuccess
 
 
 @app.route("/removeTestsuit", methods=["POST", "GET"])
@@ -103,6 +164,56 @@ def removeTestsuit():
         json.dump(fileJson, f, indent=4, ensure_ascii=False)
     return removeSuccess
 
+
+@app.route("/removeProject", methods=["POST", "GET"])
+def removeProject():
+    removeSuccess = "false"
+    urlData = {
+        "userName": None,
+        "projectName": None,
+        "testsuitName": None,
+        "testcaseName": None
+    }
+    for key in urlData:
+        urlData[key] = request.form.get(key)
+    fileName = "data/" + urlData["userName"] + ".json"
+    with open(fileName, "r") as f:
+        fileJson = json.loads(f.read())
+    for project in fileJson["project"]:
+        if project["projectName"] == urlData["projectName"]:
+            fileJson["project"].remove(project)
+            removeSuccess = "true"
+    with open(fileName, "w") as f:
+        json.dump(fileJson, f, indent=4, ensure_ascii=False)
+    return removeSuccess
+
+
+@app.route("/removeTestcase", methods=["POST", "GET"])
+def removeTestcase():
+    removeSuccess = "false"
+    urlData = {
+        "userName": None,
+        "projectName": None,
+        "testsuitName": None,
+        "testcaseName": None
+    }
+    for key in urlData:
+        urlData[key] = request.form.get(key)
+    fileName = "data/" + urlData["userName"] + ".json"
+    with open(fileName, "r") as f:
+        fileJson = json.loads(f.read())
+    for project in fileJson["project"]:
+        if project["projectName"] == urlData["projectName"]:
+            for suit in project["suit"]:
+                if suit["suitName"] == urlData["testsuitName"]:
+                    for case in suit["case"]:
+                        if case["caseName"] == urlData["testcaseName"]:
+                            suit["case"].remove(case)
+                            removeSuccess = "true"
+    with open(fileName, "w") as f:
+        json.dump(fileJson, f, indent=4, ensure_ascii=False)
+    return removeSuccess
+                   
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',
