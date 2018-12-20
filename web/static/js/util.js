@@ -54,3 +54,63 @@ function addOperation(label, operation, clickOperation, itName=null){
   addChildLabel(div2, div3);
   addChildLabel(label, td);
 }
+
+// find data from file by using clickData
+
+function findDataFromFile(type, userData, clickData){
+  var returnData = null;
+  if(type == "project"){
+    returnData = findProjectFromFile(userData, clickData);
+  } else if (type == "testsuit"){
+    returnData = findTestsuitFromFile(userData, clickData);
+  } else if (type == "testcase"){
+    returnData = findTestcaseFromFile(userData, clickData);
+  } else {
+
+  }
+  return returnData;
+}
+
+function findProjectFromFile(userData, clickData){
+  var returnProject = null;
+  for(var i = 0; i < userData["project"].length; ++i){
+    var project = userData["project"][i];
+    if (project["projectName"] == clickData["projectName"]){
+      returnProject = project;
+    }
+  }
+  return returnProject;
+}
+
+function findTestsuitFromFile(userData, clickData){
+  var returnSuit = null;
+  var project = findProjectFromFile(userData, clickData);
+  for(var i = 0; i < project["suit"].length; ++i){
+    var suit = project["suit"][i];
+    if (suit["suitName"] == clickData["testsuitName"]){
+      returnSuit = suit;
+    }
+  }
+  return returnSuit;
+}
+
+function findTestcaseFromFile(userData, clickData){
+  var returnCase = null;
+  var suit = findTestsuitFromFile(userData, clickData);
+  for(var i = 0; i < suit["case"].length; ++i){
+    var testcase = suit["case"][i];
+    if (testcase["caseName"] == clickData["testcaseName"]){
+      returnCase = testcase;
+    }
+  }
+  return returnCase;
+}
+
+
+
+// set value from click data to form by id 
+function setValueToForm(ids, values){
+  for(var i = 0; i < ids.length; ++i){
+    document.getElementById(ids[i]).value = values[ids[i]];
+  }
+}

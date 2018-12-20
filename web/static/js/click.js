@@ -19,61 +19,31 @@ function clickAddTestsuit(e){
 }
 
 function clickChangeProject(e){
-  var name = getClickLabelName(e);
-  var userData = getUserData(name["userName"]);
-  for(var i = 0; i < userData["project"].length; ++i){
-    if (userData["project"][i]["projectName"] == name["projectName"]){
-      var project = userData["project"][i];
-      var ids = ["projectName","projectDiscribe","projectType","projectStartTime","projectEndTime","projectManager","projectDeveloper","projectTester"];
-      for(var j = 0; j < ids.length; ++j){
-        setFormValue(ids[j], project[ids[j]]);
-      }
-    }
-  }
+  var clickData = getClickLabelName(e);
+  var userData = getUserData(clickData["userName"]);
+  var project = findDataFromFile("project", userData, clickData);
+  var ids = ["projectName","projectDiscribe","projectType","projectStartTime","projectEndTime","projectManager","projectDeveloper","projectTester"];
+  setValueToForm(ids, project);
 }
+
 
 function clickChangeTestsuit(e){
-  var name = getClickLabelName(e);
-  var userData = getUserData(name["userName"]);
-  for(var i = 0; i < userData["project"].length; ++i){
-    if (userData["project"][i]["projectName"] == name["projectName"]){
-      var suits = userData["project"][i]["suit"];
-      for(var j = 0; j < suits.length; ++j){
-        if (suits[j]["suitName"] == name["testsuitName"]){
-          var suit = suits[j];
-          var ids = ["suitName","suitDiscribe","suitLibrary","suitSetup","suitTeardown","suitCreatTime"];
-          for(var k = 0; k < ids.length; ++k){
-            setFormValue(ids[k], suit[ids[k]]);
-          }
-        }
-      }
-    }
-  }
+  var clickData = getClickLabelName(e);
+  var userData = getUserData(clickData["userName"]);
+  var suit = findDataFromFile("testsuit", userData, clickData);
+  var ids = ["suitName","suitDiscribe","suitLibrary","suitSetup","suitTeardown","suitCreatTime"];
+  setValueToForm(ids, suit);  
 }
 
+
 function clickChangeTestcase(e){
-  var name = getClickLabelName(e);
-  var userData = getUserData(name["userName"]);
-  for(var i = 0; i < userData["project"].length; ++i){
-    if (userData["project"][i]["projectName"] == name["projectName"]){
-      var project = userData["project"][i];
-      for(var j = 0; j < project["suit"].length; ++j){
-        if(project["suit"][j]["suitName"] == name["testsuitName"]){
-          var suit = project["suit"][j];
-          for(var k = 0; k < suit["case"].length; ++k){
-            if(suit["case"][k]["caseName"] == name["testcaseName"]){
-              var testcase = suit["case"][k];
-              var ids = ["caseName","caseDiscribe","casePriority","casePrifix","caseStep","caseExpectResult","caseCreateTime"];
-              for(var t = 0; t < ids.length; ++t){
-                setFormValue(ids[t], testcase[ids[t]]);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  var clickData = getClickLabelName(e);
+  var userData = getUserData(clickData["userName"]);
+  var testcase = findDataFromFile("testcase", userData, clickData);
+  var ids = ["caseName","caseDiscribe","casePriority","casePrifix","caseStep","caseExpectResult","caseCreateTime"];
+  setValueToForm(ids, testcase);
 }
+
 
 function setFormValue(formId, value){
   var obj = document.getElementById(formId);
