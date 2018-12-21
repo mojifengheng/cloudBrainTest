@@ -78,14 +78,9 @@ function clickSubmitTestsuit(){
     "case":[]
   };
   var ids = ["suitName","suitDiscribe","suitLibrary","suitSetup","suitTeardown","suitCreatTime"];
-  for(var i = 0; i < ids.length; ++i){
-    var formValue = document.getElementById(ids[i]).value;
-    valueJson[ids[i]] = formValue;
-  }
-  var subUrl = "setFormValueTestsuit";
-  var isSuccess = ajax_fun(subUrl, valueJson);
-  if (isSuccess == "true"){
-    alert("测试用例添加成功")
+  var writeSuccess = clickSubmit("Testsuit", valueJson, ids);
+  if (writeSuccess == "true"){
+    alert("添加测试用例集成功");
     location.reload();
   }
 }
@@ -105,13 +100,8 @@ function clickSubmitProject(){
     "projectEndTime": null
   };
   var ids = ["projectName","projectDiscribe","projectType","projectStartTime","projectEndTime","projectManager","projectDeveloper","projectTester"];
-  for(var i = 0; i < ids.length; ++i){
-    var formValue = document.getElementById(ids[i]).value;
-    valueJson[ids[i]] = formValue
-  }
-  var subUrl = "writeProjectToUser";
-  var isSuccess = ajax_fun(subUrl, valueJson);
-  if (isSuccess == "true"){
+  var writeSuccess = clickSubmit("Project", valueJson, ids);
+  if (writeSuccess == "true"){
     alert("添加项目成功");
     location.reload();
   }
@@ -133,16 +123,31 @@ function clickSubmitTestcase(){
     "bug": "false"
   };
   var ids = ["caseName","caseDiscribe","casePriority","casePrifix","caseStep","caseExpectResult","caseCreateTime"];
+  var writeSuccess = clickSubmit("Testcase", valueJson, ids);
+  if (writeSuccess == "true"){
+    alert("添加测试用例成功");
+    location.reload();
+  }
+}
+
+function clickSubmit(type, valueJson, ids){
+  var formValue = getFormValues(valueJson, ids);
+  var writeSuccess = writeValues(type, formValue);
+  return writeSuccess;
+}
+
+function getFormValues(valueJson, ids){
   for(var i = 0; i < ids.length; ++i){
     var formValue = document.getElementById(ids[i]).value;
     valueJson[ids[i]] = formValue
   }
-  var subUrl = "writeTestCase";
-  var isSuccess = ajax_fun(subUrl, valueJson);
-  if (isSuccess == "true"){
-    alert("添加测试用例成功")
-    location.reload();
-  }
+  return valueJson
+}
+
+function writeValues(type, formValue){
+  var writeUrl = "write" + type;
+  var writeSuccess = ajax_fun(writeUrl, formValue);
+  return writeSuccess;
 }
 
 function clickCancelTestsuit(){

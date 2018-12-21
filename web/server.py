@@ -48,7 +48,7 @@ def getData():
     return json.dumps(data)
 
 
-@app.route("/setFormValueTestsuit", methods=["POST", "GET"])
+@app.route("/writeTestsuit", methods=["POST", "GET"])
 def setFormValueTestsuit():
     returnFlag = "false"
     writeJson = {
@@ -79,7 +79,7 @@ def setFormValueTestsuit():
 
 
 
-@app.route("/writeProjectToUser", methods=["POST", "GET"])
+@app.route("/writeProject", methods=["POST", "GET"])
 def writeProjectToUser():
     writeSuccess = "false"
     writeJson = {
@@ -107,7 +107,7 @@ def writeProjectToUser():
     return writeSuccess
 
 
-@app.route("/writeTestCase", methods=["POST", "GET"])
+@app.route("/writeTestcase", methods=["POST", "GET"])
 def writeTestCase():
     writeSuccess = "false"
     writeJson = {
@@ -214,7 +214,7 @@ def removeTestcase():
         json.dump(fileJson, f, indent=4, ensure_ascii=False)
     return removeSuccess
 
-    
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',
             port='1817',
