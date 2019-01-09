@@ -1,0 +1,22 @@
+*** Settings ***
+Documentation     Sikuli Library Demo
+Test Setup        Add Needed Image Path
+Test Teardown     Stop Remote Server
+Library           Remote    http://192.168.100.237:5689/
+
+*** Variables ***
+# ${IMAGE_DIR}      E:\\RF\\robotframework-SikuliLibrary-master\\demo\\hello_world\\img\\
+${IMAGE_DIR}      .
+*** Test Cases ***
+Windows Notepad Hello World
+    Open Windows Start Menu
+
+*** Keywords ***
+Add Needed Image Path
+    Add Image Path    ${IMAGE_DIR}
+
+Open Windows Start Menu
+    doubleClick    windows_start_menu.png
+    wait until screen contain    login_page.png    10
+    mouse move    login_page_login_button.png
+    doubleClick    login_page_login_button.png

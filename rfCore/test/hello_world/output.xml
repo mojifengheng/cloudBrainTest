@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generator="Robot 3.1 (Python 3.5.2 on linux)" generated="20190108 17:03:19.694">
+<suite name="Test Remote Sikuli" id="s1" source="/home/zhangzhi/RobotFramework/cloudBrainTest/rfCore/test/hello_world/test_remote_sikuli.txt">
+<test name="Windows Notepad Hello World" id="s1-t1">
+<kw name="Add Needed Image Path" type="setup">
+<kw name="Add Image Path" library="Remote">
+<doc>Add image path</doc>
+<arguments>
+<arg>${IMAGE_DIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190108 17:03:38.080">Params: [.]</msg>
+<status status="PASS" starttime="20190108 17:03:38.069" endtime="20190108 17:03:38.080"></status>
+</kw>
+<status status="PASS" starttime="20190108 17:03:38.069" endtime="20190108 17:03:38.080"></status>
+</kw>
+<kw name="Open Windows Start Menu">
+<kw name="Double Click" library="Remote">
+<doc>Double click image</doc>
+<arguments>
+<arg>windows_start_menu.png</arg>
+</arguments>
+<msg level="FAIL" timestamp="20190108 17:03:38.100">Connection to remote server broken: Remote end closed connection without response</msg>
+<status status="FAIL" starttime="20190108 17:03:38.081" endtime="20190108 17:03:38.100"></status>
+</kw>
+<status status="FAIL" starttime="20190108 17:03:38.080" endtime="20190108 17:03:38.101"></status>
+</kw>
+<kw name="Stop Remote Server" library="Remote" type="teardown">
+<doc>Stops the remote server.</doc>
+<msg level="INFO" timestamp="20190108 17:03:38.107">Robot Framework remote server stopping</msg>
+<status status="PASS" starttime="20190108 17:03:38.101" endtime="20190108 17:03:38.107"></status>
+</kw>
+<status status="FAIL" critical="yes" starttime="20190108 17:03:38.068" endtime="20190108 17:03:38.108">Connection to remote server broken: Remote end closed connection without response</status>
+</test>
+<doc>Sikuli Library Demo</doc>
+<status status="FAIL" starttime="20190108 17:03:19.695" endtime="20190108 17:03:38.108"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Remote Sikuli" id="s1" fail="1" pass="0">Test Remote Sikuli</stat>
+</suite>
+</statistics>
+<errors>
+<msg level="WARN" timestamp="20190108 17:03:19.691">Automatically parsing other than '*.robot' files is deprecated. Convert '/home/zhangzhi/RobotFramework/cloudBrainTest/rfCore/test/hello_world/test_remote_sikuli.txt' to '*.robot' format or use '--extension' to explicitly configure which files to parse.</msg>
+</errors>
+</robot>
