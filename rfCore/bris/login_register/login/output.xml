@@ -38,8 +38,6 @@
 </kw>
 <status endtime="20190109 15:36:25.666" starttime="20190109 15:36:22.764" status="PASS"></status>
 </kw>
-
-
 <kw name="Clear Old Account">
 <kw name="Double Click" library="Remote">
 <doc>Double click image</doc>
@@ -81,8 +79,6 @@
 </kw>
 <status endtime="20190109 15:36:27.984" starttime="20190109 15:36:25.667" status="PASS"></status>
 </kw>
-
-
 <kw name="Type Account">
 <kw name="Input Text" library="Remote">
 <doc>Input text. Image could be empty</doc>
@@ -114,7 +110,6 @@ Input Text:
 </kw>
 <status endtime="20190109 15:36:30.684" starttime="20190109 15:36:27.985" status="PASS"></status>
 </kw>
-
 <kw name="Click Login">
 <kw name="Click" library="Remote">
 <doc>Click image</doc>
@@ -128,19 +123,17 @@ Input Text:
 </kw>
 <status endtime="20190109 15:36:31.717" starttime="20190109 15:36:30.685" status="PASS"></status>
 </kw>
-
-
 <kw name="Stop Remote Server" type="teardown" library="Remote">
 <doc>Stops the remote server.</doc>
 <msg timestamp="20190109 15:36:31.720" level="INFO">Robot Framework remote server stopping</msg>
 <status endtime="20190109 15:36:31.721" starttime="20190109 15:36:31.717" status="PASS"></status>
 </kw>
-
 <status endtime="20190109 15:36:31.721" starttime="20190109 15:36:22.750" status="PASS" critical="yes"></status>
 </test>
 <doc>Sikuli Library Demo</doc>
 <status endtime="20190109 15:36:31.722" starttime="20190109 15:36:20.016" status="PASS"></status>
 </suite>
+
 <statistics>
 <total>
 <stat pass="1" fail="0">Critical Tests</stat>
