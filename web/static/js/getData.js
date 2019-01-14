@@ -2,17 +2,20 @@ function getUrlData(){
   var urlUserName = null;
   var urlProjectName = null;
   var urlTestsuitName = null;
+  var urlTestcaseName = null;
   try{
     urlUserName = decodeURI(document.URL.split('?')[1].split("&")[0].split('=')[1]);
     urlProjectName = decodeURI(document.URL.split('?')[1].split("&")[1].split('=')[1]);
     urlTestsuitName = decodeURI(document.URL.split('?')[1].split("&")[2].split('=')[1]);
+    urlTestcaseName = decodeURI(document.URL.split('?')[1].split("&")[3].split('=')[1])
   } catch(err){
     //TODO：here we should do something or report log
   }
   var urlData = {
     "urlUserName":urlUserName,
     "urlProjectName":urlProjectName,
-    "urlTestsuitName":urlTestsuitName
+    "urlTestsuitName":urlTestsuitName,
+    "urlTestcaseName": urlTestcaseName
   };
   return urlData;
 }
@@ -24,6 +27,13 @@ function getUserData(userName){
   var postData = {"userName":userName}
   var userData = JSON.parse(ajax_fun(subUrl, postData));
   return userData
+}
+
+function getTestResultData(urlData){
+  var subUrl = "getTestResultData";
+  var postData = urlData;
+  var testResultData = JSON.parse(ajax_fun(subUrl, postData));
+  return testResultData;
 }
 
 

@@ -1,5 +1,6 @@
 from xml.dom.minidom import parse
 import xml.dom.minidom
+import os
 
 def get_data_from_xml(file):
     testsuitInfo = {
@@ -58,6 +59,16 @@ def get_data_from_xml(file):
                     testsuitInfo["testsuitDoc"] = testsuitDoc.childNodes[0].data
 
     return testsuitInfo
+
+
+def findDataFromXML(findPath):
+    # data = {"testFind":"okFindDataFromPath"}
+    path = os.path.join("data", findPath["userName"], findPath["projectName"], findPath["testsuitName"], findPath["testcaseName"], "output.xml")
+    # print(path)
+    if os.path.exists(path):
+        data = get_data_from_xml(path)
+        # print(data)
+    return data
 
 
 if __name__ == "__main__":

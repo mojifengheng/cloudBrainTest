@@ -11,3 +11,4 @@
 (11) 左边 Icons :在原文件的pages/icons/font-awesome.html
 (12) 左边User page中的资源，在原文件的pages/samples下的各个文件。
 (13) 颜色标签可以使用 text-info（紫色）；text-warning(黄色)；text-danger(红色)；text-succeed（绿色）
+(14) result.html中的天气的图片，在/static/images/samples里面，可以根据实际情况，更换照片

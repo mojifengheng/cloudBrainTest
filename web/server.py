@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import json
 import os
 import io
+from util import findDataFromXML
 
 app = Flask(__name__)
 
@@ -25,6 +26,10 @@ def testcase():
 def project():
     return render_template("project.html")
 
+@app.route('/result', methods=["POST", "GET"])
+def result():
+    return render_template("result.html")
+
 
 @app.route('/checkForm', methods=["POST", "GET"])
 def checkForm():
@@ -45,6 +50,21 @@ def getData():
     fileName = "data/" + userName + ".json"
     with open(fileName, "r") as f:
         data = json.loads(f.read())
+    return json.dumps(data)
+
+
+@app.route("/getTestResultData", methods=["POST", "GET"])
+def getTestResultData():
+    findPath = {
+        "userName":request.form.get("urlUserName"),
+        "projectName":request.form.get("urlProjectName"),
+        "testsuitName":request.form.get("urlTestsuitName"),
+        "testcaseName":request.form.get("urlTestcaseName")
+    }
+    # print(findPath)
+    # data = findDataFromXML()
+    data = findDataFromXML(findPath)
+    # data = {"test":"ok"}
     return json.dumps(data)
 
 

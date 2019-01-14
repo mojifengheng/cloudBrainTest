@@ -18,6 +18,13 @@ function clickAddTestsuit(e){
   window.location.href = urlHref;
 }
 
+function clickExcuteTestcase(e){
+  var name = getClickLabelData(e)
+  //DOTO
+  var urlHref = "result?userName=" + name["userName"] + "&project=" + name["projectName"] + "&testsuit=" + name["testsuitName"] + "&testcase=" + name["testcaseName"]
+  window.location.href = urlHref;
+}
+
 function clickChangeProject(e){
   var clickData = getClickLabelData(e);
   var userData = getUserData(clickData["userName"]);

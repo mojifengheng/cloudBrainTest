@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generator="Robot 3.1 (Python 3.5.2 on linux)" generated="20190109 15:36:20.015">
+<suite id="s1" name="Login" source="/home/zhangzhi/RobotFramework/cloudBrainTest/rfCore/bris/login_register/login/login.robot">
+<test id="s1-t1" name="Register Bris">
+
+<kw name="Add Needed Image Path" type="setup">
+<kw name="Add Image Path" library="Remote">
+<doc>Add image path</doc>
+<arguments>
+<arg>${IMAGE_DIR}</arg>
+</arguments>
+<msg timestamp="20190109 15:36:22.763" level="INFO">Params: [E:\rftest\bris\login_register\login\]</msg>
+<status endtime="20190109 15:36:22.763" starttime="20190109 15:36:22.751" status="PASS"></status>
+</kw>
+<status endtime="20190109 15:36:22.763" starttime="20190109 15:36:22.750" status="PASS"></status>
+</kw>
+
+<kw name="Open Bris Page">
+<kw name="Double Click" library="Remote">
+<doc>Double click image</doc>
+<arguments>
+<arg>desktop_cloud_brain.png</arg>
+</arguments>
+<msg timestamp="20190109 15:36:24.003" level="INFO">Params: [desktop_cloud_brain.png]</msg>
+<msg timestamp="20190109 15:36:24.003" level="INFO" html="yes">&lt;img src='./sikuliximage-1547019382113.png'/&gt;
+[log] DOUBLE CLICK on L(113,352)@S(0)[0,0 1920x1080] (553 msec)</msg>
+<status endtime="20190109 15:36:24.003" starttime="20190109 15:36:22.764" status="PASS"></status>
+</kw>
+<kw name="Wait Until Screen Contain" library="Remote">
+<doc>Wait until image shown in screen</doc>
+<arguments>
+<arg>login_page.png</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20190109 15:36:25.666" level="INFO">Params: [login_page.png, 10]</msg>
+<msg timestamp="20190109 15:36:25.666" level="INFO" html="yes">&lt;img src='./sikuliximage-1547019384521.png'/&gt;</msg>
+<status endtime="20190109 15:36:25.666" starttime="20190109 15:36:24.004" status="PASS"></status>
+</kw>
+<status endtime="20190109 15:36:25.666" starttime="20190109 15:36:22.764" status="PASS"></status>
+</kw>
+<kw name="Clear Old Account">
+<kw name="Double Click" library="Remote">
+<doc>Double click image</doc>
+<arguments>
+<arg>login_page_account.png</arg>
+</arguments>
+<msg timestamp="20190109 15:36:26.805" level="INFO">Params: [login_page_account.png]</msg>
+<msg timestamp="20190109 15:36:26.805" level="INFO" html="yes">&lt;img src='./sikuliximage-1547019384948.png'/&gt;
+[log] DOUBLE CLICK on L(1143,611)@S(0)[0,0 1920x1080] (550 msec)</msg>
+<status endtime="20190109 15:36:26.805" starttime="20190109 15:36:25.667" status="PASS"></status>
+</kw>
+<kw name="Press Special Key" library="Remote">
+<doc>Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20190109 15:36:26.856" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status endtime="20190109 15:36:26.856" starttime="20190109 15:36:26.806" status="PASS"></status>
+</kw>
+<kw name="Double Click" library="Remote">
+<doc>Double click image</doc>
+<arguments>
+<arg>login_page_password.png</arg>
+</arguments>
+<msg timestamp="20190109 15:36:27.939" level="INFO">Params: [login_page_password.png]</msg>
+<msg timestamp="20190109 15:36:27.939" level="INFO" html="yes">&lt;img src='./sikuliximage-1547019386080.png'/&gt;
+[log] DOUBLE CLICK on L(1146,646)@S(0)[0,0 1920x1080] (549 msec)</msg>
+<status endtime="20190109 15:36:27.939" starttime="20190109 15:36:26.856" status="PASS"></status>
+</kw>
+<kw name="Press Special Key" library="Remote">
+<doc>Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20190109 15:36:27.984" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status endtime="20190109 15:36:27.984" starttime="20190109 15:36:27.939" status="PASS"></status>
+</kw>
+<status endtime="20190109 15:36:27.984" starttime="20190109 15:36:25.667" status="PASS"></status>
+</kw>
+<kw name="Type Account">
+<kw name="Input Text" library="Remote">
+<doc>Input text. Image could be empty</doc>
+<arguments>
+<arg>login_page_account.png</arg>
+<arg>123456</arg>
+</arguments>
+<msg timestamp="20190109 15:36:29.346" level="INFO">Params: [login_page_account.png, 123456]
+Input Text:
+123456</msg>
+<msg timestamp="20190109 15:36:29.347" level="INFO" html="yes">&lt;img src='./sikuliximage-1547019387229.png'/&gt;
+[log] CLICK on L(1143,611)@S(0)[0,0 1920x1080] (525 msec)
+[log]  TYPE "123456"</msg>
+<status endtime="20190109 15:36:29.347" starttime="20190109 15:36:27.985" status="PASS"></status>
+</kw>
+<kw name="Input Text" library="Remote">
+<doc>Input text. Image could be empty</doc>
+<arguments>
+<arg>login_page_password.png</arg>
+<arg>123456</arg>
+</arguments>
+<msg timestamp="20190109 15:36:30.684" level="INFO">Params: [login_page_password.png, 123456]
+Input Text:
+123456</msg>
+<msg timestamp="20190109 15:36:30.684" level="INFO" html="yes">&lt;img src='./sikuliximage-1547019388582.png'/&gt;
+[log] CLICK on L(1146,646)@S(0)[0,0 1920x1080] (525 msec)
+[log]  TYPE "123456"</msg>
+<status endtime="20190109 15:36:30.684" starttime="20190109 15:36:29.347" status="PASS"></status>
+</kw>
+<status endtime="20190109 15:36:30.684" starttime="20190109 15:36:27.985" status="PASS"></status>
+</kw>
+<kw name="Click Login">
+<kw name="Click" library="Remote">
+<doc>Click image</doc>
+<arguments>
+<arg>login_page_login_button</arg>
+</arguments>
+<msg timestamp="20190109 15:36:31.717" level="INFO">Params: [login_page_login_button]</msg>
+<msg timestamp="20190109 15:36:31.717" level="INFO" html="yes">&lt;img src='./sikuliximage-1547019389896.png'/&gt;
+[log] CLICK on L(1082,715)@S(0)[0,0 1920x1080] (525 msec)</msg>
+<status endtime="20190109 15:36:31.717" starttime="20190109 15:36:30.685" status="PASS"></status>
+</kw>
+<status endtime="20190109 15:36:31.717" starttime="20190109 15:36:30.685" status="PASS"></status>
+</kw>
+<kw name="Stop Remote Server" type="teardown" library="Remote">
+<doc>Stops the remote server.</doc>
+<msg timestamp="20190109 15:36:31.720" level="INFO">Robot Framework remote server stopping</msg>
+<status endtime="20190109 15:36:31.721" starttime="20190109 15:36:31.717" status="PASS"></status>
+</kw>
+<status endtime="20190109 15:36:31.721" starttime="20190109 15:36:22.750" status="PASS" critical="yes"></status>
+</test>
+<doc>Sikuli Library Demo</doc>
+<status endtime="20190109 15:36:31.722" starttime="20190109 15:36:20.016" status="PASS"></status>
+</suite>
+
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat id="s1" pass="1" name="Login" fail="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
