@@ -114,3 +114,8 @@ function setValueToForm(ids, values){
     document.getElementById(ids[i]).value = values[ids[i]];
   }
 }
+
+function setValueToText(id, value){
+  var obj = document.getElementById(id);
+  obj.innerHTML = value;
+}

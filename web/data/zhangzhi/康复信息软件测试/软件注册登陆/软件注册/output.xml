@@ -108,7 +108,7 @@ Input Text:
 [log]  TYPE "123456"</msg>
 <status endtime="20190109 15:36:30.684" starttime="20190109 15:36:29.347" status="PASS"></status>
 </kw>
-<status endtime="20190109 15:36:30.684" starttime="20190109 15:36:27.985" status="PASS"></status>
+<status endtime="20190109 15:36:30.684" starttime="20190109 15:36:27.985" status="FAIL"></status>
 </kw>
 <kw name="Click Login">
 <kw name="Click" library="Remote">
