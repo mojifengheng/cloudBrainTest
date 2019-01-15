@@ -165,9 +165,21 @@
                       <label for="exampleInputCity2">创建时间</label>
                       <input type="text" class="form-control" id="caseCreateTime" placeholder="创建时间">
                     </div>
-                    <button type="button" class="btn btn-success mr-2" onclick="clickSubmitTestcase();">确定</button>
-                    <button type="button" class="btn btn-light" onclick="clickCancelTestcase();">取消</button>
                   </form>
+                  <form>
+                    <div class="form-group">
+                        <label>File upload</label>
+                        <input id="testcaseFile" type="file" name="img[]" class="file-upload-default" onchange="clickFileChange();">
+                        <div class="input-group col-xs-12">
+                          <input id="testcaseText" type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                          <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-info" type="button" onclick="clickFileUpload();">Upload</button>
+                          </span>
+                        </div>
+                      </div>
+                  </form>
+                  <button type="button" class="btn btn-success mr-2" onclick="clickSubmitTestcase();">确定</button>
+                  <button type="button" class="btn btn-light" onclick="clickCancelTestcase();">取消</button>
                 </div>
               </div>
             </div>

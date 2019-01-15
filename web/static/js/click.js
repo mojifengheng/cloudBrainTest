@@ -135,6 +135,31 @@ function clickSubmitTestcase(){
     alert("添加测试用例成功");
     location.reload();
   }
+  clickSubmitFile();
+}
+
+function clickSubmitFile(){
+  // alert("File submit")
+  var formData = new FormData();
+  formData.append("testcaseFile", $('#testcaseFile')[0].files[0]);
+  $.ajax({
+    url : $SCRIPT_ROOT + "upload",//这里写你的url
+    type : 'POST',
+    data : formData,
+    contentType: false,// 当有文件要上传时，此项是必须的，否则后台无法识别文件流的起始位置
+    processData: false,// 是否序列化data属性，默认true(注意：false时type必须是post)
+    dataType: 'text',//这里是返回类型，一般是json,text等
+    clearForm: true,//提交后是否清空表单数据
+    async:false,
+    success: function() {   //提交成功后自动执行的处理函数，参数data就是服务器返回的数据。
+    },
+    complete: function(XMLHttpRequest, textStatus){
+      returnText = XMLHttpRequest.responseText;
+      alert(returnText)
+    },
+    error: function(data, status, e) {  //提交失败自动执行的处理函数。
+    }
+  });
 }
 
 function clickSubmit(type, valueJson, ids){
@@ -223,4 +248,16 @@ function clickBugCancel(e){
   var clickName = getClickLabelData(e);
   var tr = document.getElementById(clickName["testcaseName"]);
   tr.setAttribute("class", "");
+}
+
+
+function clickFileUpload(){
+  var file = document.getElementById("testcaseFile");
+  file.click();
+}
+
+function clickFileChange(){
+  var text = document.getElementById("testcaseText");
+  var file = document.getElementById("testcaseFile");
+  text.value = file.value;
 }

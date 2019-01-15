@@ -3,6 +3,7 @@ import json
 import os
 import io
 from util import findDataFromXML
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
@@ -233,6 +234,14 @@ def removeTestcase():
     with open(fileName, "w") as f:
         json.dump(fileJson, f, indent=4, ensure_ascii=False)
     return removeSuccess
+
+@app.route("/upload", methods=["POST", "GET"])
+def upload():
+    f = request.files["testcaseFile"]
+    basepath = os.path.dirname(__file__)
+    upload_path = os.path.join(basepath, secure_filename(f.filename))
+    f.save(upload_path)
+    return "ok"
 
 
 if __name__ == "__main__":
