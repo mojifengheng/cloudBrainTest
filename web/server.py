@@ -235,11 +235,17 @@ def removeTestcase():
         json.dump(fileJson, f, indent=4, ensure_ascii=False)
     return removeSuccess
 
-@app.route("/upload", methods=["POST", "GET"])
-def upload():
-    f = request.files["testcaseFile"]
+@app.route("/upload/<string:userName>/<string:projectName>/<string:testsuitName>/<string:testcaseName>", methods=["POST", "GET"])
+def upload(userName,projectName,testsuitName,testcaseName):
     basepath = os.path.dirname(__file__)
-    upload_path = os.path.join(basepath, secure_filename(f.filename))
+    path = os.path.join(basepath, "data", userName, projectName, testsuitName, testcaseName)
+    if os.path.exists(path):
+        print("testcase is change not add")
+    else:
+        os.makedirs(path)
+    f = request.files["testcaseFile"]
+    
+    upload_path = os.path.join(path, secure_filename(f.filename))
     f.save(upload_path)
     return "ok"
 

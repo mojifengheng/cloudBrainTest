@@ -135,15 +135,17 @@ function clickSubmitTestcase(){
     alert("添加测试用例成功");
     location.reload();
   }
-  clickSubmitFile();
+  clickSubmitFile(valueJson, ids);
 }
 
-function clickSubmitFile(){
+function clickSubmitFile(valueJson, ids){
+  var formValue = getFormValues(valueJson, ids);
+  var path = formValue["userName"] + "/" + formValue["projectName"] + "/" +formValue["testsuitName"] + "/" + formValue["caseName"]
   // alert("File submit")
   var formData = new FormData();
   formData.append("testcaseFile", $('#testcaseFile')[0].files[0]);
   $.ajax({
-    url : $SCRIPT_ROOT + "upload",//这里写你的url
+    url : $SCRIPT_ROOT + "upload/" + path,//这里写你的url
     type : 'POST',
     data : formData,
     contentType: false,// 当有文件要上传时，此项是必须的，否则后台无法识别文件流的起始位置
