@@ -249,6 +249,29 @@ def upload(userName,projectName,testsuitName,testcaseName):
     f.save(upload_path)
     return "ok"
 
+@app.route("/excute", methods=["POST", "GET"])
+def excute():
+    returnStatus = "False"
+    userName = request.form.get("userName")
+    projectName = request.form.get("projectName")
+    testsuitName = request.form.get("testsuitName")
+    testcaseName = request.form.get("testcaseName")
+    basepath = os.path.dirname(__file__)
+    file_path = os.path.join(basepath, "data", userName, projectName, testsuitName, testcaseName)
+    print(file_path)
+    if os.path.exists(file_path):
+        for (dirpath, _, filenames) in os.walk(file_path):
+            for file in filenames:
+                if file.endswith(".robot") or file.endswith(".txt"):
+                    # print(file)
+                    file_name = os.path.join(dirpath, file)
+                    # print(file_name)
+                    os.system("robot -d %s %s" %(dirpath, file_name))
+    output_file = os.path.join(file_path, "output.xml")
+    if os.path.exists(output_file):
+        returnStatus = "True"
+    return returnStatus
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',

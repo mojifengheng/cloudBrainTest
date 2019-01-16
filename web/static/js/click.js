@@ -20,9 +20,20 @@ function clickAddTestsuit(e){
 
 function clickExcuteTestcase(e){
   var name = getClickLabelData(e)
-  //DOTO
-  var urlHref = "result?userName=" + name["userName"] + "&project=" + name["projectName"] + "&testsuit=" + name["testsuitName"] + "&testcase=" + name["testcaseName"]
-  window.location.href = urlHref;
+  var postUrl = "excute"
+  var postData = {
+    "userName" : name["userName"],
+    "projectName": name["projectName"],
+    "testsuitName" : name["testsuitName"],
+    "testcaseName" : name["testcaseName"]
+  }
+  var excuteSuccess = ajax_fun(postUrl, postData)
+  if (excuteSuccess == "True"){
+    var urlHref = "result?userName=" + name["userName"] + "&project=" + name["projectName"] + "&testsuit=" + name["testsuitName"] + "&testcase=" + name["testcaseName"]
+    window.location.href = urlHref;
+  } else {
+    alert("自动化测试执行失败，请重试！")
+  }
 }
 
 function clickChangeProject(e){
