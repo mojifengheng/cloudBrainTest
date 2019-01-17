@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1 (Python 3.5.2 on linux)" rpa="false" generated="20190117 16:34:25.654">
+<suite id="s1" name="Search By Number" source="/home/zhangzhi/RobotFramework/cloudBrainTest/web/data/zhangzhi/康复信息软件测试/患者搜索/床号搜索/search_by_number.robot">
+<test id="s1-t1" name="登陆软件">
+<kw type="setup" name="添加图片地址">
+<kw library="Remote" name="Add Image Path">
+<doc>Add image path</doc>
+<arguments>
+<arg>${IMAGE_DIR}</arg>
+</arguments>
+<msg timestamp="20190117 16:34:26.057" level="INFO">Params: [E:\rftest\bris\patient_search\search_by_number\]</msg>
+<status status="PASS" endtime="20190117 16:34:26.058" starttime="20190117 16:34:26.054"></status>
+</kw>
+<status status="PASS" endtime="20190117 16:34:26.058" starttime="20190117 16:34:26.053"></status>
+</kw>
+<kw name="打开康复信息软件">
+<kw library="Remote" name="Double Click">
+<doc>Double click image</doc>
+<arguments>
+<arg>desktop_cloud_brain.png</arg>
+</arguments>
+<msg timestamp="20190117 16:34:27.105" level="INFO">Params: [desktop_cloud_brain.png]</msg>
+<msg timestamp="20190117 16:34:27.105" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714066708.png'/&gt;
+[log] DOUBLE CLICK on L(113,352)@S(0)[0,0 1920x1080] (549 msec)</msg>
+<status status="PASS" endtime="20190117 16:34:27.105" starttime="20190117 16:34:26.060"></status>
+</kw>
+<kw library="Remote" name="Wait Until Screen Contain">
+<doc>Wait until image shown in screen</doc>
+<arguments>
+<arg>login_page.png</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20190117 16:34:28.722" level="INFO">Params: [login_page.png, 10]</msg>
+<msg timestamp="20190117 16:34:28.722" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714069047.png'/&gt;</msg>
+<status status="PASS" endtime="20190117 16:34:28.722" starttime="20190117 16:34:27.105"></status>
+</kw>
+<status status="PASS" endtime="20190117 16:34:28.722" starttime="20190117 16:34:26.059"></status>
+</kw>
+<kw name="清除旧有的账号">
+<kw library="Remote" name="Double Click">
+<doc>Double click image</doc>
+<arguments>
+<arg>login_page_account.png</arg>
+</arguments>
+<msg timestamp="20190117 16:34:29.808" level="INFO">Params: [login_page_account.png]</msg>
+<msg timestamp="20190117 16:34:29.808" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714069389.png'/&gt;
+[log] DOUBLE CLICK on L(1143,611)@S(0)[0,0 1920x1080] (547 msec)</msg>
+<status status="PASS" endtime="20190117 16:34:29.808" starttime="20190117 16:34:28.723"></status>
+</kw>
+<kw library="Remote" name="Press Special Key">
+<doc>Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20190117 16:34:29.852" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status status="PASS" endtime="20190117 16:34:29.852" starttime="20190117 16:34:29.809"></status>
+</kw>
+<kw library="Remote" name="Double Click">
+<doc>Double click image</doc>
+<arguments>
+<arg>login_page_password.png</arg>
+</arguments>
+<msg timestamp="20190117 16:34:30.928" level="INFO">Params: [login_page_password.png]</msg>
+<msg timestamp="20190117 16:34:30.928" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714070524.png'/&gt;
+[log] DOUBLE CLICK on L(1146,646)@S(0)[0,0 1920x1080] (545 msec)</msg>
+<status status="PASS" endtime="20190117 16:34:30.928" starttime="20190117 16:34:29.853"></status>
+</kw>
+<kw library="Remote" name="Press Special Key">
+<doc>Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20190117 16:34:30.973" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status status="PASS" endtime="20190117 16:34:30.973" starttime="20190117 16:34:30.928"></status>
+</kw>
+<status status="PASS" endtime="20190117 16:34:30.973" starttime="20190117 16:34:28.722"></status>
+</kw>
+<kw name="输入新账号">
+<kw library="Remote" name="Input Text">
+<doc>Input text. Image could be empty</doc>
+<arguments>
+<arg>login_page_account.png</arg>
+<arg>123456</arg>
+</arguments>
+<msg timestamp="20190117 16:34:32.303" level="INFO">Params: [login_page_account.png, 123456]
+Input Text:
+123456</msg>
+<msg timestamp="20190117 16:34:32.303" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714071643.png'/&gt;
+[log] CLICK on L(1143,611)@S(0)[0,0 1920x1080] (525 msec)
+[log]  TYPE "123456"</msg>
+<status status="PASS" endtime="20190117 16:34:32.303" starttime="20190117 16:34:30.973"></status>
+</kw>
+<kw library="Remote" name="Input Text">
+<doc>Input text. Image could be empty</doc>
+<arguments>
+<arg>login_page_password.png</arg>
+<arg>123456</arg>
+</arguments>
+<msg timestamp="20190117 16:34:33.653" level="INFO">Params: [login_page_password.png, 123456]
+Input Text:
+123456</msg>
+<msg timestamp="20190117 16:34:33.653" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714072974.png'/&gt;
+[log] CLICK on L(1146,646)@S(0)[0,0 1920x1080] (523 msec)
+[log]  TYPE "123456"</msg>
+<status status="PASS" endtime="20190117 16:34:33.653" starttime="20190117 16:34:32.303"></status>
+</kw>
+<status status="PASS" endtime="20190117 16:34:33.653" starttime="20190117 16:34:30.973"></status>
+</kw>
+<kw name="确认登陆">
+<kw library="Remote" name="Click">
+<doc>Click image</doc>
+<arguments>
+<arg>login_page_login_button</arg>
+</arguments>
+<msg timestamp="20190117 16:34:34.689" level="INFO">Params: [login_page_login_button]</msg>
+<msg timestamp="20190117 16:34:34.689" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714074326.png'/&gt;
+[log] CLICK on L(1082,715)@S(0)[0,0 1920x1080] (523 msec)</msg>
+<status status="PASS" endtime="20190117 16:34:34.689" starttime="20190117 16:34:33.654"></status>
+</kw>
+<status status="PASS" endtime="20190117 16:34:34.689" starttime="20190117 16:34:33.653"></status>
+</kw>
+<status critical="yes" status="PASS" endtime="20190117 16:34:34.689" starttime="20190117 16:34:26.052"></status>
+</test>
+<test id="s1-t2" name="搜索患者">
+<kw type="setup" name="添加图片地址">
+<kw library="Remote" name="Add Image Path">
+<doc>Add image path</doc>
+<arguments>
+<arg>${IMAGE_DIR}</arg>
+</arguments>
+<msg timestamp="20190117 16:34:34.693" level="INFO">Params: [E:\rftest\bris\patient_search\search_by_number\]</msg>
+<status status="PASS" endtime="20190117 16:34:34.693" starttime="20190117 16:34:34.691"></status>
+</kw>
+<status status="PASS" endtime="20190117 16:34:34.693" starttime="20190117 16:34:34.690"></status>
+</kw>
+<kw name="选择床号">
+<kw library="Remote" name="Wait Until Screen Contain">
+<doc>Wait until image shown in screen</doc>
+<arguments>
+<arg>main_page.png</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20190117 16:34:39.797" level="INFO">Params: [main_page.png, 10]</msg>
+<msg timestamp="20190117 16:34:39.797" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714080094.png'/&gt;</msg>
+<status status="PASS" endtime="20190117 16:34:39.797" starttime="20190117 16:34:34.694"></status>
+</kw>
+<kw library="Remote" name="Click">
+<doc>Click image</doc>
+<arguments>
+<arg>main_page_search_box.png</arg>
+</arguments>
+<msg timestamp="20190117 16:34:41.694" level="INFO">Params: [main_page_search_box.png]</msg>
+<msg timestamp="20190117 16:34:41.694" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714080860.png'/&gt;
+[log] CLICK on L(433,274)@S(0)[0,0 1920x1080] (523 msec)</msg>
+<status status="PASS" endtime="20190117 16:34:41.694" starttime="20190117 16:34:39.797"></status>
+</kw>
+<kw library="Remote" name="Wait Until Screen Contain">
+<doc>Wait until image shown in screen</doc>
+<arguments>
+<arg>main_page_search_number.png</arg>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20190117 16:34:42.702" level="INFO">Params: [main_page_search_number.png, 3]</msg>
+<msg timestamp="20190117 16:34:42.702" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714083064.png'/&gt;</msg>
+<status status="PASS" endtime="20190117 16:34:42.702" starttime="20190117 16:34:41.695"></status>
+</kw>
+<kw library="Remote" name="Click">
+<doc>Click image</doc>
+<arguments>
+<arg>main_page_search_number.png</arg>
+</arguments>
+<msg timestamp="20190117 16:34:43.795" level="INFO">Params: [main_page_search_number.png]</msg>
+<msg timestamp="20190117 16:34:43.795" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714083361.png'/&gt;
+[log] CLICK on L(432,307)@S(0)[0,0 1920x1080] (525 msec)</msg>
+<status status="PASS" endtime="20190117 16:34:43.795" starttime="20190117 16:34:42.702"></status>
+</kw>
+<kw library="Remote" name="Click">
+<doc>Click image</doc>
+<arguments>
+<arg>main_page_temp.png</arg>
+</arguments>
+<msg timestamp="20190117 16:34:44.866" level="INFO">Params: [main_page_temp.png]</msg>
+<msg timestamp="20190117 16:34:44.866" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714084447.png'/&gt;
+[log] CLICK on L(660,175)@S(0)[0,0 1920x1080] (525 msec)</msg>
+<status status="PASS" endtime="20190117 16:34:44.866" starttime="20190117 16:34:43.796"></status>
+</kw>
+<status status="PASS" endtime="20190117 16:34:44.866" starttime="20190117 16:34:34.693"></status>
+</kw>
+<kw name="输入床号">
+<kw library="Remote" name="Wait Until Screen Contain">
+<doc>Wait until image shown in screen</doc>
+<arguments>
+<arg>main_page_search_text.png</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20190117 16:34:45.187" level="INFO">Params: [main_page_search_text.png, 10]</msg>
+<msg timestamp="20190117 16:34:45.187" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714085546.png'/&gt;</msg>
+<status status="PASS" endtime="20190117 16:34:45.187" starttime="20190117 16:34:44.867"></status>
+</kw>
+<kw library="Remote" name="Click">
+<doc>Click image</doc>
+<arguments>
+<arg>main_page_search_text.png</arg>
+</arguments>
+<msg timestamp="20190117 16:34:46.223" level="INFO">Params: [main_page_search_text.png]</msg>
+<msg timestamp="20190117 16:34:46.223" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714085814.png'/&gt;
+[log] CLICK on L(506,274)@S(0)[0,0 1920x1080] (525 msec)</msg>
+<status status="PASS" endtime="20190117 16:34:46.223" starttime="20190117 16:34:45.187"></status>
+</kw>
+<kw library="Remote" name="Input Text">
+<doc>Input text. Image could be empty</doc>
+<arguments>
+<arg>main_page_search_text.png</arg>
+<arg>321</arg>
+</arguments>
+<msg timestamp="20190117 16:34:47.416" level="INFO">Params: [main_page_search_text.png, 321]
+Input Text:
+321</msg>
+<msg timestamp="20190117 16:34:47.416" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714086862.png'/&gt;
+[log] CLICK on L(506,274)@S(0)[0,0 1920x1080] (526 msec)
+[log]  TYPE "321"</msg>
+<status status="PASS" endtime="20190117 16:34:47.417" starttime="20190117 16:34:46.223"></status>
+</kw>
+<status status="PASS" endtime="20190117 16:34:47.417" starttime="20190117 16:34:44.866"></status>
+</kw>
+<kw name="点击搜索">
+<kw library="Remote" name="Click">
+<doc>Click image</doc>
+<arguments>
+<arg>main_page_search_button.png</arg>
+</arguments>
+<msg timestamp="20190117 16:34:49.592" level="INFO">Params: [main_page_search_button.png]</msg>
+<msg timestamp="20190117 16:34:49.592" html="yes" level="INFO">&lt;img src='./sikuliximage-1547714088612.png'/&gt;
+[log] CLICK on L(563,274)@S(0)[0,0 1920x1080] (524 msec)</msg>
+<status status="PASS" endtime="20190117 16:34:49.592" starttime="20190117 16:34:47.417"></status>
+</kw>
+<status status="PASS" endtime="20190117 16:34:49.592" starttime="20190117 16:34:47.417"></status>
+</kw>
+<status critical="yes" status="PASS" endtime="20190117 16:34:49.592" starttime="20190117 16:34:34.690"></status>
+</test>
+<doc>在左边搜索框，用床号搜索患者</doc>
+<status status="PASS" endtime="20190117 16:34:49.593" starttime="20190117 16:34:25.656"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat id="s1" pass="2" name="Search By Number" fail="0">Search By Number</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
