@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190212 10:31:08.646" generator="Robot 2.8.7 (Python 2.7.13 on win32)">
+<suite source="E:\rftest\web\static\icon\transition.robot" id="s1" name="Transition">
+<test id="s1-t1" name="静态页面跳转">
+<kw type="setup" name="添加图片地址">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Remote.Add Image Path">
+<doc>Add image path</doc>
+<arguments>
+<arg>${IMAGE_DIR}</arg>
+</arguments>
+<msg timestamp="20190212 10:31:08.903" level="INFO">Params: [E:\rftest\web\static\icon]</msg>
+<status status="PASS" endtime="20190212 10:31:08.903" starttime="20190212 10:31:08.897"></status>
+</kw>
+<status status="PASS" endtime="20190212 10:31:08.904" starttime="20190212 10:31:08.896"></status>
+</kw>
+<kw type="kw" name="打开浏览器">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Remote.Double Click">
+<doc>Double click image</doc>
+<arguments>
+<arg>desktop_chrome.png</arg>
+</arguments>
+<msg timestamp="20190212 10:31:09.977" level="INFO">Params: [desktop_chrome.png]</msg>
+<msg timestamp="20190212 10:31:09.977" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938669182.png'/&gt;
+[log] DOUBLE CLICK on L(42,779)@S(0)[0,0 1920x1080] (542 msec)</msg>
+<status status="PASS" endtime="20190212 10:31:09.977" starttime="20190212 10:31:08.905"></status>
+</kw>
+<status status="PASS" endtime="20190212 10:31:09.978" starttime="20190212 10:31:08.904"></status>
+</kw>
+<kw type="kw" name="输入网址并进入">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Remote.Wait Until Screen Contain">
+<doc>Wait until image shown in screen</doc>
+<arguments>
+<arg>web_baidu.png</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20190212 10:31:11.628" level="INFO">Params: [web_baidu.png, 10]</msg>
+<msg timestamp="20190212 10:31:11.628" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938671605.png'/&gt;</msg>
+<status status="PASS" endtime="20190212 10:31:11.628" starttime="20190212 10:31:09.979"></status>
+</kw>
+<kw type="kw" name="Remote.Click">
+<doc>Click image</doc>
+<arguments>
+<arg>web_baidu.png</arg>
+</arguments>
+<msg timestamp="20190212 10:31:12.896" level="INFO">Params: [web_baidu.png]</msg>
+<msg timestamp="20190212 10:31:12.896" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938672021.png'/&gt;
+[log] CLICK on L(960,54)@S(0)[0,0 1920x1080] (522 msec)</msg>
+<status status="PASS" endtime="20190212 10:31:12.897" starttime="20190212 10:31:11.629"></status>
+</kw>
+<kw type="kw" name="Remote.Paste Text">
+<doc>Paste text. Image could be empty</doc>
+<arguments>
+<arg>web_baidu.png</arg>
+<arg>120.79.23.235:5678</arg>
+</arguments>
+<msg timestamp="20190212 10:31:14.135" level="INFO">Params: [web_baidu.png, 120.79.23.235:5678]
+Paste Text:
+120.79.23.235:5678</msg>
+<msg timestamp="20190212 10:31:14.135" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938673237.png'/&gt;
+[log] CLICK on L(960,54)@S(0)[0,0 1920x1080] (520 msec)</msg>
+<status status="PASS" endtime="20190212 10:31:14.135" starttime="20190212 10:31:12.898"></status>
+</kw>
+<kw type="kw" name="Remote.Press Special Key">
+<doc>Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20190212 10:31:14.180" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" endtime="20190212 10:31:14.180" starttime="20190212 10:31:14.136"></status>
+</kw>
+<status status="PASS" endtime="20190212 10:31:14.181" starttime="20190212 10:31:09.978"></status>
+</kw>
+<kw type="kw" name="输入账号密码登陆">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Remote.Wait Until Screen Contain">
+<doc>Wait until image shown in screen</doc>
+<arguments>
+<arg>web_admin.png</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20190212 10:31:15.546" level="INFO">Params: [web_admin.png, 10]</msg>
+<msg timestamp="20190212 10:31:15.546" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938675522.png'/&gt;</msg>
+<status status="PASS" endtime="20190212 10:31:15.547" starttime="20190212 10:31:14.181"></status>
+</kw>
+<kw type="kw" name="Remote.Paste Text">
+<doc>Paste text. Image could be empty</doc>
+<arguments>
+<arg>web_user.png</arg>
+<arg>BfrRobot</arg>
+</arguments>
+<msg timestamp="20190212 10:31:16.674" level="INFO">Params: [web_user.png, BfrRobot]
+Paste Text:
+BfrRobot</msg>
+<msg timestamp="20190212 10:31:16.674" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938675836.png'/&gt;
+[log] CLICK on L(974,269)@S(0)[0,0 1920x1080] (520 msec)</msg>
+<status status="PASS" endtime="20190212 10:31:16.675" starttime="20190212 10:31:15.547"></status>
+</kw>
+<kw type="kw" name="Remote.Click">
+<doc>Click image</doc>
+<arguments>
+<arg>web_user_check.png</arg>
+</arguments>
+<msg timestamp="20190212 10:31:17.878" level="INFO">Params: [web_user_check.png]</msg>
+<msg timestamp="20190212 10:31:17.878" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938677019.png'/&gt;
+[log] CLICK on L(964,313)@S(0)[0,0 1920x1080] (528 msec)</msg>
+<status status="PASS" endtime="20190212 10:31:17.878" starttime="20190212 10:31:16.676"></status>
+</kw>
+<kw type="kw" name="Remote.Paste Text">
+<doc>Paste text. Image could be empty</doc>
+<arguments>
+<arg>web_password.png</arg>
+<arg>bfr123</arg>
+</arguments>
+<msg timestamp="20190212 10:31:19.003" level="INFO">Params: [web_password.png, bfr123]
+Paste Text:
+bfr123</msg>
+<msg timestamp="20190212 10:31:19.003" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938678170.png'/&gt;
+[log] CLICK on L(974,352)@S(0)[0,0 1920x1080] (520 msec)</msg>
+<status status="PASS" endtime="20190212 10:31:19.004" starttime="20190212 10:31:17.879"></status>
+</kw>
+<kw type="kw" name="Remote.Press Special Key">
+<doc>Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20190212 10:31:19.047" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" endtime="20190212 10:31:19.047" starttime="20190212 10:31:19.004"></status>
+</kw>
+<kw type="kw" name="Remote.Click">
+<doc>Click image</doc>
+<arguments>
+<arg>web_submit.png</arg>
+</arguments>
+<msg timestamp="20190212 10:31:20.217" level="INFO">Params: [web_submit.png]</msg>
+<msg timestamp="20190212 10:31:20.217" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938679372.png'/&gt;
+[log] CLICK on L(961,464)@S(0)[0,0 1920x1080] (520 msec)</msg>
+<status status="PASS" endtime="20190212 10:31:20.217" starttime="20190212 10:31:19.047"></status>
+</kw>
+<status status="PASS" endtime="20190212 10:31:20.217" starttime="20190212 10:31:14.181"></status>
+</kw>
+<kw type="kw" name="确定成都外骨骼跳转">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Remote.Wait Until Screen Contain">
+<doc>Wait until image shown in screen</doc>
+<arguments>
+<arg>web_static.png</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20190212 10:31:22.014" level="INFO">Params: [web_static.png, 10]</msg>
+<msg timestamp="20190212 10:31:22.015" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938681662.png'/&gt;</msg>
+<status status="PASS" endtime="20190212 10:31:22.015" starttime="20190212 10:31:20.218"></status>
+</kw>
+<kw type="kw" name="Remote.Mouse Move">
+<doc>Move the mouse pointer to the target</doc>
+<arguments>
+<arg>web_chengdu.png</arg>
+</arguments>
+<msg timestamp="20190212 10:31:23.785" level="INFO">Params: [web_chengdu.png]</msg>
+<msg timestamp="20190212 10:31:23.785" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938682906.png'/&gt;</msg>
+<status status="PASS" endtime="20190212 10:31:23.786" starttime="20190212 10:31:22.016"></status>
+</kw>
+<kw type="kw" name="Remote.Click">
+<doc>Click image</doc>
+<arguments>
+<arg>web_chengdu.png</arg>
+</arguments>
+<msg timestamp="20190212 10:31:25.289" level="INFO">Params: [web_chengdu.png]</msg>
+<msg timestamp="20190212 10:31:25.289" html="yes" level="INFO">&lt;img src='./sikuliximage-1549938684506.png'/&gt;
+[log] CLICK on L(992,716)@S(0)[0,0 1920x1080] (521 msec)</msg>
+<status status="PASS" endtime="20190212 10:31:25.290" starttime="20190212 10:31:23.786"></status>
+</kw>
+<status status="PASS" endtime="20190212 10:31:25.290" starttime="20190212 10:31:20.218"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20190212 10:31:25.290" critical="yes" starttime="20190212 10:31:08.894"></status>
+</test>
+<doc>监控静态页面跳转</doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20190212 10:31:25.291" starttime="20190212 10:31:08.696"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="1" id="s1" name="Transition">Transition</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

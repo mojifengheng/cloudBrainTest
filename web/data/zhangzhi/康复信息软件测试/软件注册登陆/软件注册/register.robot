@@ -2,7 +2,7 @@
 Documentation     注册康复信息软件
 Test Setup        添加图片地址
 Test Teardown     停止远程服务器
-Library           Remote    http://192.168.100.237:8270/
+Library           Remote    http://192.168.100.229:8270/
 
 *** Variables ***
 ${IMAGE_DIR}      E:\\rftest\\bris\\login_register\\register\\

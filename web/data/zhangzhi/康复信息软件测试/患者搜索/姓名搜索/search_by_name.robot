@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     在左边搜索框，用姓名搜索患者
 Test Setup        添加图片地址
-Library           Remote    http://192.168.100.237:8270/    #Test Teardown    停止远程服务器
+Library           Remote    http://192.168.100.229:8270/    #Test Teardown    停止远程服务器
 
 *** Variables ***
 ${IMAGE_DIR}      E:\\rftest\\bris\\patient_search\\search_by_name\\

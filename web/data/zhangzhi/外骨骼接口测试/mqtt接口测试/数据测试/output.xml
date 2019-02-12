@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190211 16:49:14.468" generator="Robot 2.8.7 (Python 2.7.13 on win32)">
+<suite source="E:\rftest\mqtt\Iterface.robot" id="s1" name="Iterface">
+<test id="s1-t1" name="验证外骨骼接口">
+<kw type="setup" name="连接MQTT服务器">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="MQTTLibrary.Connect">
+<doc>Connect to an MQTT broker. This is a pre-requisite step for publish</doc>
+<arguments>
+<arg>127.0.0.1</arg>
+<arg>port=61613</arg>
+</arguments>
+<msg timestamp="20190211 16:49:14.651" level="INFO">Connecting to 127.0.0.1 at port 61613</msg>
+<status status="PASS" endtime="20190211 16:49:19.665" starttime="20190211 16:49:14.651"></status>
+</kw>
+<status status="PASS" endtime="20190211 16:49:19.665" starttime="20190211 16:49:14.650"></status>
+</kw>
+<kw type="kw" name="发送外骨骼数据">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="MQTTLibrary.Publish">
+<doc>Publish a message to a topic with specified qos and retained flag.</doc>
+<arguments>
+<arg>topic=MQTTtest2</arg>
+<arg>message=testmessage</arg>
+<arg>qos=2</arg>
+<arg>retain=${false}</arg>
+</arguments>
+<msg timestamp="20190211 16:49:19.665" level="INFO">Publish topic: MQTTtest2, message: testmessage, qos: 2, retain: False</msg>
+<msg timestamp="20190211 16:49:24.674" level="WARN">mid wasn't matched: 1</msg>
+<status status="PASS" endtime="20190211 16:49:24.674" starttime="20190211 16:49:19.665"></status>
+</kw>
+<status status="PASS" endtime="20190211 16:49:24.674" starttime="20190211 16:49:19.665"></status>
+</kw>
+<kw type="kw" name="接收外骨骼数据并验证">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${messages} = MQTTLibrary.Subscribe">
+<doc>Subscribe to a topic and return a list of message payloads received</doc>
+<arguments>
+<arg>topic=MQTTtest2</arg>
+<arg>qos=2</arg>
+<arg>timeout=5</arg>
+<arg>limit=0</arg>
+</arguments>
+<msg timestamp="20190211 16:49:24.674" level="INFO">Subscribing to topic: MQTTtest2</msg>
+<msg timestamp="20190211 16:49:29.683" level="INFO">${messages} = []</msg>
+<status status="PASS" endtime="20190211 16:49:29.683" starttime="20190211 16:49:24.674"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Messages=${messages}</arg>
+</arguments>
+<status status="PASS" endtime="20190211 16:49:29.683" starttime="20190211 16:49:29.683"></status>
+</kw>
+<status status="PASS" endtime="20190211 16:49:29.683" starttime="20190211 16:49:24.674"></status>
+</kw>
+<kw type="teardown" name="关闭MQTT服务器">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="MQTTLibrary.Disconnect">
+<doc>Disconnect from MQTT Broker.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20190211 16:49:29.683" starttime="20190211 16:49:29.683"></status>
+</kw>
+<status status="PASS" endtime="20190211 16:49:29.683" starttime="20190211 16:49:29.683"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20190211 16:49:29.683" critical="yes" starttime="20190211 16:49:14.649"></status>
+</test>
+<doc>外骨骼机器人接口测试</doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20190211 16:49:29.683" starttime="20190211 16:49:14.530"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="1" id="s1" name="Iterface">Iterface</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20190211 16:49:24.674" level="WARN">mid wasn't matched: 1</msg>
+</errors>
+</robot>
